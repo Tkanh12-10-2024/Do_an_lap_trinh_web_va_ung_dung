@@ -746,7 +746,8 @@ a:focus {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #fff;
+  background: url("images/hero-bg.jpg");
+  animation: gradientBG 15s ease infinite;  
 }
 
 .signin_section .heading_container {
@@ -1082,5 +1083,25 @@ a:focus {
 
 .footer_section .footer-info p a {
   color: inherit;
+}
+.sign-in{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(f2.jpg);
+  animation: gradientBG 15s ease infinite;
+  overflow: hidden;
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
