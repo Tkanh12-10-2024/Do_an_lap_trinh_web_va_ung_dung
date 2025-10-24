@@ -14,6 +14,7 @@
   <link rel="shortcut icon" href="images/favicon.png" type="">
 
   <title> Feane </title>
+  <script defer src="js/menu.js"></script>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -32,7 +33,7 @@
 
 </head>
 
-<body>
+<body style="background-color: rgb(139, 133, 133);">
 
   <div class="hero_area">
     <div class="bg-box">
@@ -44,7 +45,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Feane
+              Lẩu Ngon
             </span>
           </a>
 
@@ -55,23 +56,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="menu.html">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="cart.html">Giỏ hàng</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="book.html">Book Table</a>
+                <a class="nav-link" href="book.html">Đăng ký tài khoản</a>
               </li>
             </ul>
             <div class="user_option">
               <a href="" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a class="cart_link" href="#">
+              <a class="cart_link" href="cart.html">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
                     <g>
@@ -130,9 +131,6 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
-              </a>
             </div>
           </div>
         </nav>
@@ -149,14 +147,16 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      Lẩu Ngon
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                    </p>
+                    Quán mang đến đa dạng các món lẩu hấp dẫn như lẩu cua đồng, lẩu
+                    bò, lẩu hải sản, lẩu cá, cùng nguyên liệu tươi ngon, nước dùng
+                    đậm đà và không gian ấm cúng. Lẩu Ngon luôn sẵn sàng mang đến
+                    trải nghiệm trọn vị và đáng nhớ cho thực khách.</p>
                     <div class="btn-box">
                       <a href="signin.html" class="btn1">
-                        Wanna sign in ? 
+                        bạn muốn đăng nhập ? 
                       </a>
                     </div>
                   </div>
@@ -170,14 +170,14 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      Lẩu Ngon
                     </h1>
                     <p>
                       Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
-                        Order Now
+                      <a href="" class="btn1" onclick="datmon(evnet)">
+                        Đặt Món 
                       </a>
                     </div>
                   </div>
@@ -207,13 +207,7 @@
             </div>
           </div>
         </div>
-        <div class="container">
-          <ol class="carousel-indicators">
-            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-            <li data-target="#customCarousel1" data-slide-to="1"></li>
-            <li data-target="#customCarousel1" data-slide-to="2"></li>
-          </ol>
-        </div>
+        
       </div>
 
     </section>
@@ -229,17 +223,17 @@
           <div class="col-md-6  ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/o1.jpg" alt="">
+                <img src="images/f3.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
-                  Tasty Thursdays
+                  Thứ Năm Ngon Miệng
                 </h5>
                 <h6>
                   <span>20%</span> Off
                 </h6>
                 <a href="">
-                  Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                  Đặt món  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                     <g>
                       <g>
                         <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
@@ -298,17 +292,17 @@
           <div class="col-md-6  ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/o2.jpg" alt="">
+                <img src="images/f2.png" alt="">
               </div>
               <div class="detail-box">
                 <h5>
-                  Pizza Days
+                  Ngày Hải Sản
                 </h5>
                 <h6>
                   <span>15%</span> Off
                 </h6>
                 <a href="signin.html">
-                  Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                  Đặt món<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                     <g>
                       <g>
                         <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
@@ -377,16 +371,16 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Our Menu
+          Menu Lẩu Ngon
         </h2>
       </div>
 
       <ul class="filters_menu">
-        <li class="active" data-filter="*">All</li>
-        <li data-filter=".burger">Burger</li>
-        <li data-filter=".pizza">Pizza</li>
-        <li data-filter=".pasta">Pasta</li>
-        <li data-filter=".fries">Fries</li>
+        <li class="active" data-filter="*">Tất cả</li>
+        <li data-filter=".burger">Lẩu Cua Đồng</li>
+        <li data-filter=".pizza">Lẩu Hải Sản</li>
+        <li data-filter=".pasta">Lẩu Bò</li>
+        <li data-filter=".fries">Đồ Ăn Thêm</li>
       </ul>
 
       <div class="filters-content">
@@ -399,16 +393,16 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    Lẩu Cua Đồng
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                  Hương vị dân dã, nước dùng thanh ngọt từ cua đồng tươi,
+                  hòa quyện cùng rau xanh và đậu phụ, mang đậm hồn quê Việt.</p>
                   <div class="options">
                     <h6>
-                      $20
+                      200.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="#" onclick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -475,16 +469,17 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Burger
+                    Lẩu Hải Sản
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                  Nước dùng đậm đà vị chua cay hài hòa, kết hợp cùng tôm,
+                  mực, nghêu, cá tươi và rau xanh, mang hương vị tươi mát
+                  của biển cả.</p>
                   <div class="options">
                     <h6>
-                      $15
+                      250.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="#" onclick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -551,16 +546,16 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    Lẩu Bò
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                    Nước lẩu thơm ngon, vị ngọt tự nhiên từ xương bò hầm, ăn
+                    kèm thịt bò mềm, rau, tạo nên món ăn đậm đà hương vị.</p>
                   <div class="options">
                     <h6>
-                      $17
+                      250.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="#" onclick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -627,16 +622,16 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pasta
+                    Tôm
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                    Thịt tôm săn chắc, ngọt tự nhiên, mang hương vị đặc trưng
+                    của biển, thích hợp cho món lẩu.</p>
                   <div class="options">
                     <h6>
-                      $18
+                      50.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="#" onclick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -703,16 +698,16 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    French Fries
+                    Bò
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                    Mềm thơm, giàu dinh dưỡng, có vị ngọt tự nhiên, thường
+                    được dùng cho món nhúng lẩu hấp dẫn.</p>
                   <div class="options">
                     <h6>
-                      $10
+                      70.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="" onclick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -779,16 +774,16 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    Rau
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                    Tươi xanh, giòn ngọt tự nhiên, cung cấp nhiều vitamin,
+                    giúp cân bằng hương vị và tăng độ thanh mát cho món ăn.</p>
                   <div class="options">
                     <h6>
-                      $15
+                      30.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="" onclick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -855,16 +850,16 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Tasty Burger
+                    Mực
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                    Thịt mực trắng giòn, ngọt thanh tự nhiên, thường được chế
+                    biến nhúng lẩu, mang hương vị đậm đà của biển.</p>
                   <div class="options">
                     <h6>
-                      $12
+                      70.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="" oncick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -931,16 +926,16 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Tasty Burger
+                    Nước Ngọt
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                    Thức uống có gas hoặc không gas, vị ngọt dịu và sảng khoái,
+                    giúp giải khát và mang lại cảm giác tươi mới trong mỗi bữa ăn.</p>
                   <div class="options">
                     <h6>
-                      $14
+                      20.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="#" onclick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -1007,16 +1002,16 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pasta
+                    Bia Tiger
                   </h5>
                   <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
+                    Thức uống có gas mát lạnh, vị đắng nhẹ xen lẫn hương thơm lúa mạch,
+                    giúp tăng hứng vị khi thưởng thức cùng các món ăn.</p>
                   <div class="options">
                     <h6>
-                      $10
+                      50.000 VNĐ
                     </h6>
-                    <a href="">
+                    <a href="#" onclick="themvaogiohang(event)">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -1077,11 +1072,6 @@
           </div>
         </div>
       </div>
-      <div class="btn-box">
-        <a href="">
-          View More
-        </a>
-      </div>
     </div>
   </section>
 
@@ -1095,25 +1085,23 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="images/about-img.png" alt="">
+            <img src="images/hero-bg.jpg" alt="">
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                We Are Feane
+                Chúng Tôi Là Lẩu Ngon
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              Quán chúng tôi muốn  mang đến đa dạng các món lẩu hấp dẫn như lẩu cua đồng, lẩu bò, lẩu hải sản, lẩu cá,
+               cùng nguyên liệu tươi ngon, nước dùng đậm đà và không gian ấm cúng.
+               Lẩu Ngon luôn sẵn sàng mang đến trải nghiệm trọn vị và đáng nhớ cho thực khách
             </p>
-            <a href="">
-              Read More
-            </a>
+
+            
           </div>
         </div>
       </div>
@@ -1122,120 +1110,8 @@
 
   <!-- end about section -->
 
-  <!-- book section -->
-  <section class="book_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Book A Table
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
-              </div>
-              <div>
-                <select class="form-control nice-select wide">
-                  <option value="" disabled selected>
-                    How many persons?
-                  </option>
-                  <option value="">
-                    2
-                  </option>
-                  <option value="">
-                    3
-                  </option>
-                  <option value="">
-                    4
-                  </option>
-                  <option value="">
-                    5
-                  </option>
-                </select>
-              </div>
-              <div>
-                <input type="date" class="form-control">
-              </div>
-              <div class="btn_box">
-                <button>
-                  Book Now
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="map_container ">
-            <div id="googleMap"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end book section -->
 
-  <!-- client section -->
-
-  <section class="client_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center psudo_white_primary mb_45">
-        <h2>
-          What Says Our Customers
-        </h2>
-      </div>
-      <div class="carousel-wrap row ">
-        <div class="owl-carousel client_owl-carousel">
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                </p>
-                <h6>
-                  Moana Michell
-                </h6>
-                <p>
-                  magna aliqua
-                </p>
-              </div>
-              <div class="img-box">
-                <img src="images/client1.jpg" alt="" class="box-img">
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                </p>
-                <h6>
-                  Mike Hamell
-                </h6>
-                <p>
-                  magna aliqua
-                </p>
-              </div>
-              <div class="img-box">
-                <img src="images/client2.jpg" alt="" class="box-img">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end client section -->
+  
 
   <!-- footer section -->
   <footer class="footer_section">
@@ -1244,19 +1120,19 @@
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
             <h4>
-              Contact Us
+              Liên hệ chúng tôi
             </h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Địa chỉ
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  SĐT: +01 1234567890
                 </span>
               </a>
               <a href="">
@@ -1271,49 +1147,27 @@
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
             <a href="" class="footer-logo">
-              Feane
+              Lẩu Ngon
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
-            </p>
-            <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
-            </div>
+             Quán mang đến đa dạng các món lẩu hấp dẫn như lẩu cua đồng, lẩu bò, lẩu hải sản, lẩu cá, cùng nguyên liệu tươi ngon, nước dùng đậm đà và không gian ấm cúng.
+             Lẩu Ngon luôn sẵn sàng mang đến trải nghiệm trọn vị và đáng nhớ cho thực khách.</p>
+            
           </div>
         </div>
         <div class="col-md-4 footer-col">
           <h4>
-            Opening Hours
+            Giờ mở cửa
           </h4>
           <p>
-            Everyday
+          Tất cả ngày trong tuần
           </p>
           <p>
-            10.00 Am -10.00 Pm
+            10.00 sáng -10.00 tối
           </p>
         </div>
       </div>
       <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-        </p>
       </div>
     </div>
   </footer>

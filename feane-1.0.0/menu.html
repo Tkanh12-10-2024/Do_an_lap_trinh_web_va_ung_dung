@@ -14,8 +14,16 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="shortcut icon" href="images/favicon.png" type="" />
+    <link rel="stylesheet" href="/feane-1.0.0//js/menu.js" />
+    <link rel="stylesheet" href="/feane-1.0.0//css/menu.css" />
 
     <title>Feane</title>
+    <link rel="stylesheet" href="css/menu.css">
+    
+
+    <script defer src="js/menu.js"> </script>
+    
+    
 
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -42,7 +50,7 @@
     <link href="css/responsive.css" rel="stylesheet" />
   </head>
 
-  <body class="sub_page">
+  <body class="sub_page" style="background-color: s;">
     <div class="hero_area">
       <div class="bg-box">
         <img src="images/hero-bg.jpg" alt="" />
@@ -78,17 +86,17 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">Giỏ Hàng</a>
+                  <a class="nav-link" href="cart.html">Giỏ Hàng</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="book.html"> Đăng Ký Tài Khoản</a>
+                  <a class="nav-link" href="signin.html"> Đăng Ký Tài Khoản</a>
                 </li>
               </ul>
               <div class="user_option">
-                <a href="" class="user_link">
+                <a href="signin.html" class="user_link">
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </a>
-                <a class="cart_link" href="#">
+                <a class="cart_link" href="cart.html">
                   <svg
                     version="1.1"
                     id="Capa_1"
@@ -143,12 +151,21 @@
                     <g></g>
                   </svg>
                 </a>
-                <form class="form-inline">
-                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                <form id="formSearch" class="form-inline">
+                  <input
+                    type="text"
+                    id="searchInput"
+                    name="query"
+                    placeholder="Nhập từ khóa..."
+                  />
+                  <button
+                    id="searchBtn"
+                    class="btn my-2 my-sm-0 nav_search-btn"
+                    type="button"
+                  >
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </button>
                 </form>
-                <a href="" class="order_online"> Khach Hang A </a>
               </div>
             </div>
           </nav>
@@ -162,7 +179,7 @@
     <section class="food_section layout_padding">
       <div class="container">
         <div class="heading_container heading_center">
-          <h2> Menu Lẩu Ngon</h2>
+          <h2>Menu Lẩu Ngon</h2>
         </div>
 
         <ul class="filters_menu">
@@ -243,15 +260,7 @@
                           <g></g>
                           <g></g>
                         </svg>
-                      </a>
-                      <script>
-                        function themvaogiohang(e) {
-                          e.preventDefault(); // chặn link chuyển trang
-                          alert(
-                            "✅ Sản phẩm đã được thêm vào giỏ hàng thành công!"
-                          );
-                        }
-                      </script>
+                      </a>                      
                     </div>
                   </div>
                 </div>
@@ -889,9 +898,10 @@
             <div class="footer_detail">
               <a href="" class="footer-logo"> Lẩu Ngon </a>
               <p>
-                Quán mang đến đa dạng các món lẩu hấp dẫn như lẩu cua đồng, 
-                lẩu bò, lẩu hải sản, lẩu cá, cùng nguyên liệu tươi ngon, nước dùng đậm đà và không gian ấm cúng.
-                Lẩu Ngon luôn sẵn sàng mang đến trải nghiệm trọn vị và đáng nhớ cho thực khách.
+                Quán mang đến đa dạng các món lẩu hấp dẫn như lẩu cua đồng, lẩu
+                bò, lẩu hải sản, lẩu cá, cùng nguyên liệu tươi ngon, nước dùng
+                đậm đà và không gian ấm cúng. Lẩu Ngon luôn sẵn sàng mang đến
+                trải nghiệm trọn vị và đáng nhớ cho thực khách.
               </p>
             </div>
           </div>
@@ -926,5 +936,6 @@
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
     <!-- End Google Map -->
+     
   </body>
 </html>
