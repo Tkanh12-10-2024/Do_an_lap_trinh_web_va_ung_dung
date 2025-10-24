@@ -1,284 +1,306 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 
 <head>
-  <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <title>Giỏ hàng - Lẩu Ngon</title>
 
-  <title> Feane </title>
-
-  <!-- bootstrap core css -->
+  <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- nice select  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
-  <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+
+<style>
+  body {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ===== PHẦN GIỎ HÀNG ===== */
+  .cart_wrapper {
+    background-color: #fff;
+    width: 100%;
+    padding: 100px 0;
+    margin: 0;
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .cart_wrapper .container {
+    max-width: 1400px;
+  }
+
+  .heading_container h2 {
+    color: #222;
+    font-weight: 700;
+    border-bottom: 3px solid #ffbe33;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  table th {
+    background-color: #ffbe33;
+    color: #fff;
+  }
+
+  table td,
+  table th {
+    vertical-align: middle !important;
+  }
+
+  .btn-success {
+    background-color: #ffbe33;
+    border-color: #ffbe33;
+  }
+
+  .btn-success:hover {
+    background-color: #e0a826;
+    border-color: #e0a826;
+  }
+
+  footer.footer_section {
+    background-color: #222831;
+    color: white;
+    padding: 40px 0;
+    margin-top: 0;
+  }
+
+  .footer-logo {
+    color: #ffbe33;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .about_section {
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* ===== THANH THÔNG TIN KHÁCH HÀNG (CÙNG MÀU VỚI THANH DƯỚI) ===== */
+  .customer_info_bar {
+    background-color: #ffbe33; /* cùng màu với header bảng */
+    border: 2px solid #ffbe33;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    padding: 14px 18px;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+    font-size: 16px;
+    color: #111; /* chữ đậm hơn */
+    font-weight: 600;
+  }
+
+  .customer_info_bar b {
+    color: #111;
+    margin-right: 6px;
+  }
+
+  .customer_info_bar .address-input {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 6px;
+  }
+
+  .customer_info_bar .address-input input[type="text"] {
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    padding: 6px 8px;
+    width: 600px;
+    max-width: 75%;
+    background: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .customer_info_bar {
+      font-size: 14px;
+      padding: 10px 12px;
+    }
+
+    .customer_info_bar .address-input input[type="text"] {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .cart_wrapper {
+      padding: 60px 15px;
+    }
+  }
+
+  .table-responsive table {
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
+    border: 1px solid #ffbe33;
+    border-top: none;
+  }
+</style>
 
 </head>
 
 <body class="sub_page">
 
+  <!-- HEADER -->
   <div class="hero_area">
     <div class="bg-box">
       <img src="images/hero-bg.jpg" alt="">
     </div>
-    <!-- header section strats -->
+
     <header class="header_section">
       <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="index.html">
-            <span>
-              Feane
-            </span>
+            <span>Lẩu ngon</span>
           </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="about.html">About <span class="sr-only">(current)</span> </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="book.html">Book Table</a>
-              </li>
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+              <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+              <li class="nav-item active"><a class="nav-link" href="cart.html">Giỏ hàng</a></li>
+              <li class="nav-item"><a class="nav-link" href="book.html">Đăng ký tài khoản</a></li>
             </ul>
             <div class="user_option">
-              <a href="signin.html" class="user_link">
-                <i class="fa fa-user" aria-hidden="true"></i>
-              </a>
-              <a class="cart_link" href="#">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                  <g>
-                    <g>
-                      <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                   c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                   C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                   c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                   C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                    </g>
-                  </g>
-                  <g>
-                    <g>
-                      <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                   c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                    </g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                  <g>
-                  </g>
-                </svg>
-              </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
-              <a href="" class="order_online">
-                Order Online
-              </a>
+              <a href="signin.html" class="user_link"><i class="fa fa-user"></i></a>
+              <a href="cart.html" class="cart_link"><i class="fa fa-shopping-cart"></i></a>
+              <a href="#" class="order_online">Khách hàng A</a>
             </div>
           </div>
         </nav>
       </div>
     </header>
-    <!-- end header section -->
   </div>
 
-  <!-- about section -->
-
+  <!-- GIỎ HÀNG -->
   <section class="about_section layout_padding">
-    <div class="container  ">
+    <div class="cart_wrapper">
+      <div class="heading_container text-center mb-3">
+        <h2>Giỏ hàng của bạn</h2>
+        <p class="text-muted mt-2">Kiểm tra các món lẩu bạn đã chọn trước khi thanh toán</p>
+      </div>
 
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/about-img.png" alt="">
+      <div class="container">
+
+        <!-- ====== CUSTOMER INFO BAR (NẰM TRÊN THANH VÀNG) ====== -->
+        <div class="customer_info_bar">
+          <div><b>Mã khách hàng:</b> KH001</div>
+          <div><b>Tên khách hàng:</b> Khách hàng A</div>
+          <div style="display:inline-flex; align-items:center;">
+            <b>Địa chỉ:</b>
+            <div class="address-input">
+              <input type="text" id="customerAddress" value="123 Đường Lẩu Ngon, Quận 1, TP.HCM" />
+            </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                We Are Feane
-              </h2>
-            </div>
-            <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
+
+        <!-- ====== TABLE GIỎ HÀNG ====== -->
+        <div class="table-responsive">
+          <table class="table table-bordered text-center align-middle mb-0">
+            <thead>
+              <tr>
+                <th>Ảnh</th>
+                <th>Tên món</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+                <th>Xóa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="images/f2.png" alt="Lẩu hải sản" width="80"></td>
+                <td style="text-align:left; padding-left:12px;">Lẩu hải sản</td>
+                <td><input type="number" min="1" value="1" class="form-control text-center" style="width: 80px;"></td>
+                <td>250.000đ</td>
+                <td>250.000đ</td>
+                <td><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+              </tr>
+              <tr>
+                <td><img src="images/f3.png" alt="Lẩu bò" width="80"></td>
+                <td style="text-align:left; padding-left:12px;">Lẩu bò</td>
+                <td><input type="number" min="1" value="2" class="form-control text-center" style="width: 80px;"></td>
+                <td>250.000đ</td>
+                <td>500.000đ</td>
+                <td><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-right mt-4">
+          <h5>Tổng cộng: <strong style="color: red;">750.000đ</strong></h5>
+          <a href="menu.html" class="btn btn-secondary mt-3">← Tiếp tục mua hàng</a>
+          <a href="#" class="btn btn-success mt-3">Thanh toán</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- end about section -->
-
-  <!-- footer section -->
+  <!-- FOOTER -->
   <footer class="footer_section">
     <div class="container">
       <div class="row">
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
-            <h4>
-              Contact Us
-            </h4>
+            <h4>Thông tin liên hệ</h4>
             <div class="contact_link_box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                  Location
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +01 1234567890
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span>
-                  demo@gmail.com
-                </span>
-              </a>
+              <a href="#"><i class="fa fa-map-marker"></i><span>Địa chỉ</span></a>
+              <a href="#"><i class="fa fa-phone"></i><span>SĐT: +01 1234567890</span></a>
+              <a href="#"><i class="fa fa-envelope"></i><span>demo@gmail.com</span></a>
             </div>
           </div>
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="" class="footer-logo">
-              Feane
-            </a>
+            <a href="#" class="footer-logo">Lẩu ngon</a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+              Đa dạng các món lẩu hấp dẫn như lẩu cua đồng, bò, hải sản, cá,
+              nguyên liệu tươi ngon – không gian ấm cúng, mang lại trải nghiệm trọn vị cho bạn.
             </p>
-            <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
-            </div>
           </div>
         </div>
         <div class="col-md-4 footer-col">
-          <h4>
-            Opening Hours
-          </h4>
-          <p>
-            Everyday
-          </p>
-          <p>
-            10.00 Am -10.00 Pm
-          </p>
+          <h4>Giờ mở cửa</h4>
+          <p>Tất cả các ngày trong tuần</p>
+          <p>10.00 Sáng - 10.00 Tối</p>
         </div>
-      </div>
-      <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-        </p>
       </div>
     </div>
   </footer>
-  <!-- footer section -->
 
-  <!-- jQery -->
+  <!-- JS -->
   <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- isotope js -->
-  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
-  <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
 
+  <!-- Tùy chọn: lưu địa chỉ vào localStorage khi người dùng thay đổi -->
+  <script>
+    (function () {
+      const addrInput = document.getElementById('customerAddress');
+      // nếu đã lưu trước đó thì load
+      try {
+        const saved = localStorage.getItem('cart_customer_address');
+        if (saved) addrInput.value = saved;
+      } catch (e) { /* ignore */ }
+
+      // lưu mỗi khi bị thay đổi (blur)
+      addrInput.addEventListener('blur', function () {
+        try {
+          localStorage.setItem('cart_customer_address', addrInput.value.trim());
+        } catch (e) { /* ignore */ }
+      });
+    })();
+  </script>
 </body>
-
 </html>
