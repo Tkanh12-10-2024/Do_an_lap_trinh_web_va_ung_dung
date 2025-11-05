@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản lý khách hàng | Admin Bán Lẩu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: rgb(139, 133, 133) !important;
+      }
+
+      .sidebar {
+        background-color: #212529;
+      }
+      .nav-link.active {
+        background-color: #f8b400;
+        color: #212529 !important;
+        font-weight: bold;
+        border-radius: 6px;
+      }
+      .nav-link:hover {
+        background-color: #ffc107;
+        color: #212529 !important;
+      }
+
+      .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-control {
+        border-radius: 6px;
+      }
+
+      .btn {
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar -->
+      <nav class="sidebar text-white p-3 vh-100">
+        <h4 class="text-center mb-4" >
+          <a style="color:blanchedalmond" href="./user/index.html">🍲 Lẩu Ngon </a>
+        </h4>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="user/index - signin.html" class="nav-link text-white"
+              ><i class="fa fa-home me-2"></i> Trang chủ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="admin-dashborad.html" class="nav-link text-white"
+              ><i class="fa fa-chart-line me-2"></i> Tổng quan</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="food.html" class="nav-link text-white"
+              ><i class="fa fa-bowl-food me-2"></i> Món ăn</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="order.html" class="nav-link text-white"
+              ><i class="fa fa-box me-2"></i> Đơn hàng</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="user.html" class="nav-link active text-white"
+              ><i class="fa fa-users me-2"></i> Khách hàng</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="charst.html" class="nav-link text-white"
+              ><i class="fa fa-chart-pie me-2"></i> Thống kê</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="inventory.html" class="nav-link text-white"
+              ><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main
+        class="flex-grow-1 p-4 bg-light"
+        style="background-color: rgb(139, 133, 133) !important"
+      >
+        <h2 class="fw-bold mb-4 text-center">Quản lý khách hàng</h2>
+
+        <!-- Bảng khách hàng -->
+        <div class="card mb-4">
+          <div class="card-header bg-dark text-white fw-bold">
+            Danh sách khách hàng
+          </div>
+          <div class="card-body p-0">
+            <table class="table table-bordered text-center align-middle mb-0">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Tên khách hàng</th>
+                  <th>Số điện thoại</th>
+                  <th>Điểm tích lũy</th>
+                </tr>
+              </thead>
+              <tbody id="userTable">
+                <tr>
+                  <td>1</td>
+                  <td>Trần B</td>
+                  <td>0909123456</td>
+                  <td>120</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Nguyễn Văn A</td>
+                  <td>0909456789</td>
+                  <td>90</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Form khách hàng -->
+        <div class="card p-4">
+          <h5 class="fw-bold mb-3">
+            <i class="fa fa-user-pen me-2"></i> Thêm / Xóa khách hàng
+          </h5>
+          <form id="userForm" class="row g-3">
+            <div class="col-md-2">
+              <label class="form-label">ID</label>
+              <input
+                type="text"
+                id="id"
+                class="form-control"
+                placeholder="ID khách hàng"
+              />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Tên khách hàng</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Tên khách hàng"
+              />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Số điện thoại</label>
+              <input
+                type="text"
+                id="phone"
+                class="form-control"
+                placeholder="Số điện thoại"
+              />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Điểm tích lũy</label>
+              <input
+                type="number"
+                id="point"
+                class="form-control"
+                placeholder="Điểm"
+              />
+            </div>
+
+            <div class="col-12 text-end">
+              <button type="button" class="btn btn-success" onclick="addUser()">
+                <i class="fa fa-plus me-1"></i> Thêm
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                onclick="deleteUser()"
+              >
+                <i class="fa fa-trash me-1"></i> Xóa
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      function addUser() {
+        const id = document.getElementById("id").value;
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const point = document.getElementById("point").value;
+        const table = document.getElementById("userTable");
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${id}</td><td>${name}</td><td>${phone}</td><td>${point}</td>`;
+        table.appendChild(row);
+        alert("Đã thêm khách hàng mới!");
+        document.getElementById("userForm").reset();
+      }
+
+      function editUser() {
+        const id = document.getElementById("id").value;
+        const rows = document.querySelectorAll("#userTable tr");
+        let found = false;
+        rows.forEach((row) => {
+          if (row.children[0].innerText === id) {
+            row.children[1].innerText = document.getElementById("name").value;
+            row.children[2].innerText = document.getElementById("phone").value;
+            row.children[3].innerText = document.getElementById("point").value;
+            found = true;
+          }
+        });
+        alert("Đã sửa thông tin khách hàng!");
+      }
+
+      function deleteUser() {
+        const id = document.getElementById("id").value;
+        const table = document.getElementById("userTable");
+        for (let i = 0; i < table.rows.length; i++) {
+          if (table.rows[i].cells[0].innerText === id) {
+            table.deleteRow(i);
+            break;
+          }
+        }
+        alert("Đã xóa khách hàng!");
+      }
+    </script>
+  </body>
+</html>

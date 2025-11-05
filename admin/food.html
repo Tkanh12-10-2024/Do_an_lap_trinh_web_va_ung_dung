@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản lý món ăn | Admin Bán Lẩu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        background-color: rgb(46, 42, 42);
+      }
+      .food {
+      background-color: rgb(139, 133, 133); /* màu kem nhạt, dễ nhìn */
+      min-height: 100vh;         /* đảm bảo phủ toàn màn hình */
+      padding: 20px;
+      }
+
+      .table {
+      background-color: rgb(139, 133, 133);  /* nền trắng cho bảng */
+      border-radius: 10px;
+      overflow: hidden;
+      } 
+
+#formSua {
+  background-color: rgb(139, 133, 133); /* nền sáng cho form */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+      .btn-sua {
+        background-color: #11cf5a;
+        color: white;
+      }
+      .btn-sua:hover {
+        background-color: #10bd1e;
+      }
+
+      .btn-xoa {
+        background-color: #e63946;
+        color: white;
+      }
+      .btn-xoa:hover {
+        background-color: #d00000;
+      }
+
+      .table td:last-child {
+        padding: 0;
+      }
+
+      .action-buttons {
+        display: flex;
+      }
+
+      .action-buttons button {
+        flex: 1;
+        border-radius: 0;
+      }
+
+      .action-buttons button:first-child {
+        border-right: 1px solid rgb(139, 133, 133);
+      }
+      .sidebar { background-color: #212529; }
+    .nav-link.active {
+      background-color: #f8b400;
+      color: #212529 !important;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    .nav-link:hover {
+      background-color: #ffc107;
+      color: #212529 !important;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <nav class="sidebar text-white p-3 vh-100">
+      <h4 class="text-center mb-4">🍲 Lẩu Ngon Admin</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="user/index - signin.html" class="nav-link text-white"><i class="fa fa-home"></i> Trang chủ</a></li>
+        <li class="nav-item"><a href="admin-dashborad.html" class="nav-link text-white"><i class="fa fa-chart-line me-2"></i> Tổng quan</a></li>
+        <li class="nav-item"><a href="food.html" class="nav-link active text-white"><i class="fa fa-bowl-food me-2"></i> Món ăn</a></li>
+        <li class="nav-item"><a href="order.html" class="nav-link text-white"><i class="fa fa-box me-2"></i> Đơn hàng</a></li>
+        <li class="nav-item"><a href="user.html" class="nav-link text-white"><i class="fa fa-users me-2"></i> Khách hàng</a></li>
+        <li class="nav-item"><a href="charst.html" class="nav-link text-white"><i class="fa fa-chart-pie me-2"></i> Thống kê</a></li>
+        <li class="nav-item"><a href="inventory.html" class="nav-link text-white"><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a></li>
+      </ul>
+    </nav>
+      <!-- Main content -->
+      <main class="flex-grow-1 p-4 bg-light" style="background-color: rgb(139, 133, 133) !important;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="fw-bold" style="margin: auto">Quản lý món ăn</h2>
+        </div>
+
+        <!-- Bảng danh sách món ăn -->
+        <div class="card shadow-sm" >
+          <div class="card-header bg-white fw-bold" >Danh sách món ăn</div>
+          <div class="card-body table-responsive"  >
+            <table class="table table-bordered align-middle text-center" >
+              <thead class="table-dark" >
+                <tr>
+                  <th>ID</th>
+                  <th>Hình ảnh</th>
+                  <th>Tên món</th>
+                  <th>Giá</th>
+                  <th>Trạng thái</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td><img src="anh/f1.png" width="70" class="rounded" /></td>
+                  <td>Lẩu cua đồng</td>
+                  <td>200.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td><img src="anh/f2.png" width="70" class="rounded" /></td>
+                  <td>Lẩu hải sản</td>
+                  <td>250.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td><img src="anh/f3.png" width="70" class="rounded" /></td>
+                  <td>Lẩu bò</td>
+                  <td>250.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td><img src="anh/f4.png" width="70" class="rounded" /></td>
+                  <td>Tôm</td>
+                  <td>50.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td><img src="anh/f5.png" width="70" class="rounded" /></td>
+                  <td>Thịt bò</td>
+                  <td>70.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td><img src="anh/f6.png" width="70" class="rounded" /></td>
+                  <td>Rau</td>
+                  <td>30.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+                  <td><img src="anh/f7.png" width="70" class="rounded" /></td>
+                  <td>Mực</td>
+                  <td>70.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                  <td></td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td><img src="anh/f8.png" width="70" class="rounded" /></td>
+                  <td>Nước ngọt</td>
+                  <td>20.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td><img src="anh/f9.png" width="70" class="rounded" /></td>
+                  <td>Bia Tiger</td>
+                  <td>50.000 VNĐ</td>
+                  <td><span class="badge bg-success">Đang bán</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="container mt-4">
+          <form id="form-id " style="background-color: #f8b400;border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+            
+          <h3> chỉnh sửa/thêm và xóa món ăn</h3>
+            <div class="mb-3">
+              <label for="idMon" class="form-label">ID món</label>
+              <input
+                type="text"
+                id="idMon"
+                class="form-control"
+                placeholder="Nhập ID món ăn"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="tenMon" class="form-label">Tên món</label>
+              <input
+                type="text"
+                id="tenMon"
+                class="form-control"
+                placeholder="Nhập tên món ăn"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="giaMon" class="form-label">Giá</label>
+              <input
+                type="text"
+                id="giaMon"
+                class="form-control"
+                placeholder="Nhập giá"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="trangThai" class="form-label">Trạng thái</label>
+              <select id="trangThai" class="form-select">
+                <option value="Đang bán">Đang bán</option>
+                <option value="Hết hàng">Hết hàng</option>
+              </select>
+            </div>
+
+            <button type="button" class="btn btn-success" onclick="themMonAn(event)">Thêm</button>
+            <button type="button" class="btn btn-secondary" onclick="suaMonAn(event)">Sửa</button>
+            <button type="button" class="btn btn-xoa" onclick="xoaMonAn(event)">Xóa</button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="food.js"></script>
+  </body>
+</html>
