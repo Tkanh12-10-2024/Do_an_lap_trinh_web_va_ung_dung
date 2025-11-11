@@ -10,24 +10,24 @@ getYear();
 
 // isotope js
 $(window).on('load', function () {
-    $('.filters_menu li').click(function () {
-        $('.filters_menu li').removeClass('active');
-        $(this).addClass('active');
-
-        var data = $(this).attr('data-filter');
-        $grid.isotope({
-            filter: data
-        })
+    // Khởi tạo Isotope
+    var $grid = $(".grid").isotope({
+      itemSelector: ".all",
+      percentPosition: false,
+      masonry: {
+        columnWidth: ".all"
+      }
     });
 
-    var $grid = $(".grid").isotope({
-        itemSelector: ".all",
-        percentPosition: false,
-        masonry: {
-            columnWidth: ".all"
-        }
-    })
-});
+    // Xử lý khi click menu lọc
+    $('.filters_menu li').on('click', function () {
+      $('.filters_menu li').removeClass('active');
+      $(this).addClass('active');
+
+      var data = $(this).attr('data-filter');
+      $grid.isotope({ filter: data });
+    });
+  });
 
 // nice select
 $(document).ready(function() {

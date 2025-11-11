@@ -32,12 +32,12 @@
     <nav class="sidebar text-white p-3 vh-100">
       <h4 class="text-center mb-4">🍲 Lẩu Ngon Admin</h4>
       <ul class="nav flex-column">
-        <li class="nav-item"><a href="user/index - signin.html" class="nav-link text-white"><i class="fa fa-home me-2"></i> Trang chủ</a></li>
         <li class="nav-item"><a href="admin-dashborad.html" class="nav-link text-white"><i class="fa fa-chart-line me-2"></i> Tổng quan</a></li>
         <li class="nav-item"><a href="food.html" class="nav-link text-white"><i class="fa fa-bowl-food me-2"></i> Món ăn</a></li>
         <li class="nav-item"><a href="order.html" class="nav-link text-white"><i class="fa fa-box me-2"></i> Đơn hàng</a></li>
         <li class="nav-item"><a href="user.html" class="nav-link text-white"><i class="fa fa-users me-2"></i> Khách hàng</a></li>
         <li class="nav-item"><a href="charst.html" class="nav-link text-white"><i class="fa fa-chart-pie me-2"></i> Thống kê</a></li>
+        <li class="nav-item"><a href="import_invoice.html" class="nav-link text-white"><i class="fa fa-file-invoice me-2"></i> Phiếu nhập</a></li>
         <li class="nav-item"><a href="inventory.html" class="nav-link active text-white"><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a></li>
       </ul>
     </nav>
@@ -45,6 +45,8 @@
     <!-- Main content -->
     <main class="flex-grow-1 p-4">
       <h2 class="text-center fw-bold mb-4">Quản lý kho hàng</h2>
+
+      <div class="d-flex justify-content-end mb-3"> <input type="text" id="timKiem" class="form-control w-25" placeholder="🔍 Tìm theo mã hoặc ngày" onkeyup="timKiemPhieuNhap()" /> </div>
 
       <!-- Bảng dữ liệu -->
       <table class="table table-bordered text-center align-middle">

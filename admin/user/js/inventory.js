@@ -31,41 +31,31 @@ function getFormData() {
 }
 
 function addItem() {
+  const newItem = getFormData();
+  
+  inventory.push(newItem);
+  renderTable();
   alert("Thêm nguyên liệu thành công!");
 }
 
 function editItem() {
+  const updated = getFormData();
+  const index = inventory.findIndex((i) => i.id === updated.id);
+  
+  inventory[index] = updated;
+  renderTable();
   alert("Cập nhật nguyên liệu thành công!");
 }
 
 function deleteItem() {
+  const id = document.getElementById("id").value.trim();
+  const index = inventory.findIndex((i) => i.id === id);
   
   if (confirm("Bạn có chắc muốn xóa nguyên liệu này không?")) {
+    inventory.splice(index, 1);
+    renderTable();
     alert("Đã xóa nguyên liệu!");
   }
 }
 
 window.onload = renderTable;
-
-function timKiemPhieuNhap() {
-    let input = document.getElementById("timKiem").value.toLowerCase();
-    let table = document.getElementById("inventoryTable");
-    let tr = table.getElementsByTagName("tr");
-
-    for (let i = 0; i < tr.length; i++) {
-        let tdId = tr[i].getElementsByTagName("td")[0]; // cột ID
-        let tdDate = tr[i].getElementsByTagName("td")[4]; // cột Ngày nhập
-
-        if (tdId && tdDate) {
-            let idText = tdId.textContent.toLowerCase();
-            let dateText = tdDate.textContent.toLowerCase();
-
-            // Kiểm tra xem input có nằm trong ID hoặc ngày không
-            if (idText.includes(input) || dateText.includes(input)) {
-                tr[i].style.display = ""; // hiển thị
-            } else {
-                tr[i].style.display = "none"; // ẩn
-            }
-        }
-    }
-}

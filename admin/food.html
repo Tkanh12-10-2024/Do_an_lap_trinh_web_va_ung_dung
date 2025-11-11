@@ -17,21 +17,21 @@
         background-color: rgb(46, 42, 42);
       }
       .food {
-      background-color: rgb(139, 133, 133); /* màu kem nhạt, dễ nhìn */
-      min-height: 100vh;         /* đảm bảo phủ toàn màn hình */
-      padding: 20px;
+        background-color: rgb(139, 133, 133); /* màu kem nhạt, dễ nhìn */
+        min-height: 100vh; /* đảm bảo phủ toàn màn hình */
+        padding: 20px;
       }
 
       .table {
-      background-color: rgb(139, 133, 133);  /* nền trắng cho bảng */
-      border-radius: 10px;
-      overflow: hidden;
-      } 
+        background-color: rgb(139, 133, 133); /* nền trắng cho bảng */
+        border-radius: 10px;
+        overflow: hidden;
+      }
 
-#formSua {
-  background-color: rgb(139, 133, 133); /* nền sáng cho form */
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+      #formSua {
+        background-color: rgb(139, 133, 133); /* nền sáng cho form */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
       .btn-sua {
         background-color: #11cf5a;
@@ -65,45 +65,99 @@
       .action-buttons button:first-child {
         border-right: 1px solid rgb(139, 133, 133);
       }
-      .sidebar { background-color: #212529; }
-    .nav-link.active {
-      background-color: #f8b400;
-      color: #212529 !important;
-      font-weight: bold;
-      border-radius: 6px;
-    }
-    .nav-link:hover {
-      background-color: #ffc107;
-      color: #212529 !important;
-    }
+      .sidebar {
+        background-color: #212529;
+      }
+      .nav-link.active {
+        background-color: #f8b400;
+        color: #212529 !important;
+        font-weight: bold;
+        border-radius: 6px;
+      }
+      .nav-link:hover {
+        background-color: #ffc107;
+        color: #212529 !important;
+      }
+      #timKiem {
+        border: 2px solid #f8b400;
+        border-radius: 8px;
+        padding: 6px 12px;
+        transition: 0.3s;
+      }
+
+      #timKiem:focus {
+        outline: none;
+        border-color: #ffc107;
+        box-shadow: 0 0 6px rgba(255, 193, 7, 0.6);
+      }
     </style>
   </head>
   <body>
     <div class="d-flex">
       <nav class="sidebar text-white p-3 vh-100">
-      <h4 class="text-center mb-4">🍲 Lẩu Ngon Admin</h4>
-      <ul class="nav flex-column">
-        <li class="nav-item"><a href="user/index - signin.html" class="nav-link text-white"><i class="fa fa-home"></i> Trang chủ</a></li>
-        <li class="nav-item"><a href="admin-dashborad.html" class="nav-link text-white"><i class="fa fa-chart-line me-2"></i> Tổng quan</a></li>
-        <li class="nav-item"><a href="food.html" class="nav-link active text-white"><i class="fa fa-bowl-food me-2"></i> Món ăn</a></li>
-        <li class="nav-item"><a href="order.html" class="nav-link text-white"><i class="fa fa-box me-2"></i> Đơn hàng</a></li>
-        <li class="nav-item"><a href="user.html" class="nav-link text-white"><i class="fa fa-users me-2"></i> Khách hàng</a></li>
-        <li class="nav-item"><a href="charst.html" class="nav-link text-white"><i class="fa fa-chart-pie me-2"></i> Thống kê</a></li>
-        <li class="nav-item"><a href="inventory.html" class="nav-link text-white"><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a></li>
-      </ul>
-    </nav>
+        <h4 class="text-center mb-4">🍲 Lẩu Ngon Admin</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="admin-dashborad.html" class="nav-link text-white"
+              ><i class="fa fa-chart-line me-2"></i> Tổng quan</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="food.html" class="nav-link active text-white"
+              ><i class="fa fa-bowl-food me-2"></i> Món ăn</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="order.html" class="nav-link text-white"
+              ><i class="fa fa-box me-2"></i> Đơn hàng</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="user.html" class="nav-link text-white"
+              ><i class="fa fa-users me-2"></i> Khách hàng</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="charst.html" class="nav-link text-white"
+              ><i class="fa fa-chart-pie me-2"></i> Thống kê</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="import_invoice.html" class="nav-link text-white"
+              ><i class="fa fa-file-invoice me-2"></i> Phiếu nhập</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="inventory.html" class="nav-link text-white"
+              ><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a
+            >
+          </li>
+        </ul>
+      </nav>
       <!-- Main content -->
-      <main class="flex-grow-1 p-4 bg-light" style="background-color: rgb(139, 133, 133) !important;">
+      <main
+        class="flex-grow-1 p-4 bg-light"
+        style="background-color: rgb(139, 133, 133) !important"
+      >
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="fw-bold" style="margin: auto">Quản lý món ăn</h2>
         </div>
 
+        <div class="mb-3 text-end">
+          <input
+            type="text"
+            id="timKiem"
+            class="form-control w-25 ms-auto"
+            placeholder="🔍 Tìm món ăn ...."
+            onkeyup="timKiemMonAn()"
+          />
+        </div>
         <!-- Bảng danh sách món ăn -->
-        <div class="card shadow-sm" >
-          <div class="card-header bg-white fw-bold" >Danh sách món ăn</div>
-          <div class="card-body table-responsive"  >
-            <table class="table table-bordered align-middle text-center" >
-              <thead class="table-dark" >
+        <div class="card shadow-sm">
+          <div class="card-header bg-white fw-bold">Danh sách món ăn</div>
+          <div class="card-body table-responsive">
+            <table class="table table-bordered align-middle text-center">
+              <thead class="table-dark">
                 <tr>
                   <th>ID</th>
                   <th>Hình ảnh</th>
@@ -190,9 +244,17 @@
           </div>
         </div>
         <div class="container mt-4">
-          <form id="form-id " style="background-color: #f8b400;border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
-            
-          <h3> chỉnh sửa/thêm và xóa món ăn</h3>
+          <form
+            id="form-id"
+            style="
+              background-color: #f8b400;
+              border: 1px solid #ccc;
+              border-radius: 10px;
+              padding: 20px;
+            "
+          >
+            <h3>Chỉnh sửa / Thêm và Xóa món ăn</h3>
+
             <div class="mb-3">
               <label for="idMon" class="form-label">ID món</label>
               <input
@@ -202,6 +264,7 @@
                 placeholder="Nhập ID món ăn"
               />
             </div>
+
             <div class="mb-3">
               <label for="tenMon" class="form-label">Tên món</label>
               <input
@@ -229,10 +292,46 @@
                 <option value="Hết hàng">Hết hàng</option>
               </select>
             </div>
+            <div class="mb-3">
+              <label for="idMon" class="form-label">Hình ảnh của món ăn</label
+              ><br />
+              <button class="add-image-btn">Thêm ảnh</button>
 
-            <button type="button" class="btn btn-success" onclick="themMonAn(event)">Thêm</button>
-            <button type="button" class="btn btn-secondary" onclick="suaMonAn(event)">Sửa</button>
-            <button type="button" class="btn btn-xoa" onclick="xoaMonAn(event)">Xóa</button>
+              <style>
+                .add-image-btn {
+                  background-color: #000000; /* Màu xanh lá */
+                  color: white;
+                  padding: 10px 20px;
+                  border: none;
+                  border-radius: 8px;
+                  cursor: pointer;
+                  font-size: 16px;
+                  transition: background-color 0.3s;
+                }
+
+                .add-image-btn:hover {
+                  background-color: #a9c433;
+                }
+              </style>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success"
+              onclick="themMonAn(event)"
+            >
+              Thêm
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="suaMonAn(event)"
+            >
+              Sửa
+            </button>
+            <button type="button" class="btn btn-xoa" onclick="xoaMonAn(event)">
+              Xóa
+            </button>
           </form>
         </div>
       </main>

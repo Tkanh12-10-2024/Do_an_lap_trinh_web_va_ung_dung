@@ -13,27 +13,6 @@ function themMonAn(event) {
     alert(`✅ Đã thêm món: ${ten} - Giá: ${gia} VNĐ - Trạng thái: ${trangThai}`);
   
 }
-function timKiemMonAn() {
-  const input = document.getElementById("timKiem");
-  const filter = input.value.toLowerCase();
-  const table = document.querySelector(".table tbody");
-  const rows = table.getElementsByTagName("tr");
-
-  for (let i = 0; i < rows.length; i++) {
-    const tenMon = rows[i].getElementsByTagName("td")[2]; // cột tên món
-    const idMon = rows[i].getElementsByTagName("td")[0];  // cột ID
-    if (tenMon || idMon) {
-      const textValue =
-        tenMon.textContent.toLowerCase() + " " + idMon.textContent.toLowerCase();
-      if (textValue.indexOf(filter) > -1) {
-        rows[i].style.display = "";
-      } else {
-        rows[i].style.display = "none";
-      }
-    }
-  }
-}
-
 
 // Hàm sửa món ăn
 function suaMonAn(event) {
@@ -55,14 +34,4 @@ function xoaMonAn(event) {
     } else {
       alert("❎ Đã hủy thao tác xóa.");
     }
-
-
-
 }
-// Khi bấm nút "Thêm ảnh"
-document.querySelector(".add-image-btn").addEventListener("click", function (event) {
-  event.preventDefault(); // Ngăn form nạp lại trang (nếu có trong form)
-  alert("📸 Đã thêm ảnh thành công!");
-});
-
-

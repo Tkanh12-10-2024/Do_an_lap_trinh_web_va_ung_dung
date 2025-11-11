@@ -312,140 +312,121 @@
     </div>
   </section>
 
-  <script>
-    const STORAGE_KEY = 'demo_cart_v1';
-    function loadCart(){
-      const data = localStorage.getItem(STORAGE_KEY);
-      return data ? JSON.parse(data) : [];
-    }
-    function saveCart(cart){
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-    }
+ <script>
+  const STORAGE_KEY = 'demo_cart_v1';
 
-    // Nếu localStorage trống → thêm sản phẩm mẫu
-    function initDemoCart(){
-      let cart = loadCart();
-      if(true){
-        cart = [
-          {
-            id: 'p1',
-            title: 'Lẩu Hải Sản',
-            price: 259000,
-            qty: 1,
-            image: 'images/f2.png'
-          },
-          {
-            id: 'p2',
-            title: 'Lẩu Bò',
-            price: 289000,
-            qty: 2,
-            image: 'images/f3.png'
-          },
-          {
-            id: 'p3',
-            title: 'Lẩu cua đồng',
-            price: 239000,
-            qty: 1,
-            image: 'images/f1.png'
-          }
-        ];
-        saveCart(cart);
-      }
-    }
-
-    const cartListEl = document.getElementById('cartList');
-    const subtotalEl = document.getElementById('subtotal');
-    const shippingEl = document.getElementById('shipping');
-    const totalEl = document.getElementById('total');
-    const clearBtn = document.getElementById('clearBtn');
-    const checkoutBtn = document.getElementById('checkoutBtn');
-
-    let cart = [];
-
-    function formatVND(num){
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " ₫";
-    }
-
-    function renderCart(){
-      cart = loadCart();
-      cartListEl.innerHTML = '';
-      if(cart.length === 0){
-        cartListEl.innerHTML = '<p class="text-muted text-center">Giỏ hàng trống.</p>';
-      } else {
-        cart.forEach(item => {
-          const div = document.createElement('div');
-          div.className = 'cart-item';
-          div.innerHTML = `
-  <div class="cart-info">
-    <img src="${item.image}" alt="${item.title}">
-    <div>
-      <h6>${item.title}</h6>
-      <small>${formatVND(item.price)}</small>
-    </div>
-  </div>
-  <div class="qty-controls">
-    <button class="btn-qty" data-id="${item.id}" data-action="decrease">-</button>
-    <span class="qty">${item.qty}</span>
-    <button class="btn-qty" data-id="${item.id}" data-action="increase">+</button>
-  </div>
-  <strong>${formatVND(item.qty * item.price)}</strong>
-`;
-
-          cartListEl.appendChild(div);
-        });
-      }
-
-      let subtotal = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
-      let shipping = subtotal >= 500000 ? 0 : (subtotal > 0 ? 30000 : 0);
-      subtotalEl.textContent = formatVND(subtotal);
-      shippingEl.textContent = formatVND(shipping);
-      totalEl.textContent = formatVND(subtotal + shipping);
-    }
-
-    clearBtn.onclick = () => {
-      if(cart.length === 0) return alert('Giỏ hàng đang rỗng.');
-      if(confirm('Bạn có chắc muốn xóa toàn bộ giỏ hàng?')){
-        cart = [];
-        saveCart(cart);
-        renderCart();
-      }
-    };
-
-    // Sự kiện tăng giảm số lượng
-cartListEl.addEventListener('click', (e) => {
-  if (e.target.classList.contains('btn-qty')) {
-    const id = e.target.dataset.id;
-    const action = e.target.dataset.action;
-    let cart = loadCart();
-
-    const item = cart.find(p => p.id === id);
-    if (!item) return;
-
-    if (action === 'increase') item.qty++;
-    if (action === 'decrease' && item.qty > 1) item.qty--;
-    else if (action === 'decrease' && item.qty === 1) {
-      if (confirm(`Xóa ${item.title} khỏi giỏ hàng?`)) {
-        cart = cart.filter(p => p.id !== id);
-      }
-    }
-
-    saveCart(cart);
-    renderCart();
+  function loadCart() {
+    const data = localStorage.getItem(STORAGE_KEY);
+    return data ? JSON.parse(data) : [];
   }
-});
 
+  function saveCart(cart) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  }
 
-    checkoutBtn.onclick = () => {
-      if(cart.length === 0) return alert('Giỏ hàng trống!');
-      alert('Đặt hàng thành công!');
-      cart = [];
+  // ✅ Tạo sẵn sản phẩm mẫu nếu chưa có
+  function initDemoCart() {
+    let cart = loadCart();
+    if (cart.length === 0) {
+      cart = [
+        { id: 'p1', title: 'Lẩu Hải Sản', price: 259000, qty: 1, image: 'images/f2.png' },
+        { id: 'p2', title: 'Lẩu Bò', price: 289000, qty: 2, image: 'images/f3.png' },
+        { id: 'p3', title: 'Lẩu Cua Đồng', price: 239000, qty: 1, image: 'images/f1.png' }
+      ];
+      saveCart(cart);
+    }
+  }
+
+  const cartListEl = document.getElementById('cartList');
+  const subtotalEl = document.getElementById('subtotal');
+  const shippingEl = document.getElementById('shipping');
+  const totalEl = document.getElementById('total');
+  const clearBtn = document.getElementById('clearBtn');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+
+  function formatVND(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " ₫";
+  }
+
+  // ✅ Hiển thị giỏ hàng
+  function renderCart() {
+    const cart = loadCart();
+    cartListEl.innerHTML = '';
+
+    if (cart.length === 0) {
+      cartListEl.innerHTML = '<p class="text-muted text-center">Giỏ hàng trống.</p>';
+    } else {
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <div class="cart-info">
+            <img src="${item.image}" alt="${item.title}">
+            <div>
+              <h6>${item.title}</h6>
+              <small>${formatVND(item.price)}</small>
+            </div>
+          </div>
+          <div class="qty-controls">
+            <button class="btn-qty" data-id="${item.id}" data-action="decrease">-</button>
+            <span class="qty">${item.qty}</span>
+            <button class="btn-qty" data-id="${item.id}" data-action="increase">+</button>
+          </div>
+          <strong>${formatVND(item.qty * item.price)}</strong>
+        `;
+        cartListEl.appendChild(div);
+      });
+    }
+
+    let subtotal = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+    let shipping = subtotal >= 500000 ? 0 : (subtotal > 0 ? 30000 : 0);
+    subtotalEl.textContent = formatVND(subtotal);
+    shippingEl.textContent = formatVND(shipping);
+    totalEl.textContent = formatVND(subtotal + shipping);
+  }
+
+  // ✅ Nút "Xóa tất cả" – KHÔNG xóa khỏi localStorage để không mất sản phẩm demo
+  clearBtn.onclick = () => {
+    if (confirm('Bạn có muốn làm trống giỏ hàng không?')) {
+      let cart = loadCart();
       saveCart(cart);
       renderCart();
-    };
+    }
+  };
 
-    // Khởi tạo demo
-    initDemoCart();
-    renderCart();
-  </script>
+  // ✅ Sự kiện tăng giảm số lượng
+  cartListEl.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-qty')) {
+      const id = e.target.dataset.id;
+      const action = e.target.dataset.action;
+      let cart = loadCart();
+      const item = cart.find(p => p.id === id);
+      if (!item) return;
+
+      if (action === 'increase') item.qty++;
+      else if (action === 'decrease') {
+        if (item.qty > 1) item.qty--;
+        else if (confirm(`Xóa ${item.title} khỏi giỏ hàng?`)) {
+          cart = cart.filter(p => p.id !== id);
+        }
+      }
+
+      saveCart(cart);
+      renderCart();
+    }
+  });
+
+  // ✅ Nút “Mua hàng” – không xóa dữ liệu demo
+  checkoutBtn.onclick = () => {
+    const cart = loadCart();
+    if (cart.length === 0) return alert('Giỏ hàng trống!');
+    alert('Đặt hàng thành công! (dữ liệu demo vẫn được giữ nguyên)');
+  };
+
+  // ✅ Khởi tạo dữ liệu và hiển thị
+  initDemoCart();
+  renderCart();
+</script>
+
 </body>
 </html>

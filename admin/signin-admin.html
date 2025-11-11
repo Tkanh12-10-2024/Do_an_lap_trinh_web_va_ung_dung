@@ -11,24 +11,24 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <link rel="shortcut icon" href="user/images/favicon.png" type="">
 
   <title> Feane </title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="user/css/bootstrap.css" />
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="user/css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="user/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="user/css/responsive.css" rel="stylesheet" />
 
 </head>
 
@@ -36,7 +36,7 @@
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="images/hero-bg.jpg" alt="">
+      <img src="user/images/hero-bg.jpg" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
@@ -44,35 +44,13 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Lẩu ngon
+              Lẩu ngon fải chất
             </span>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
           </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Trang Chủ </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="signin.html">Giỏ Hàng</a>
-              </li>
-            </ul>
-            <div class="user_option">
-              <a href="" class="user_link">
-              </a>
-              
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
             </div>
           </div>
         </nav>
@@ -83,12 +61,13 @@
 
   <!-- signin section -->
   <section class="signin_section layout_padding">
-    <div class="container center">
+    <div class="container">
       <div class="heading_container">
-        <h2 style="color: #ffbe33;" class="center">
-          Đăng nhập
+        <h2 style="color: #ffbe33">
+          Đăng nhập ADMIN
         </h2>
       </div>
+      <div class="row">
         <div class="col-md-6">
           <div class="form_container">
             <form action="">
@@ -105,16 +84,14 @@
                 <script>
                   function chuyenindex(e){
                     e.preventDefault();
-                    window.location.href="index - signin.html"
+                    window.location.href="../admin-dashborad.html"
                   }
                 </script>
-                <p><a href="forgot.html" style="text-decoration: none; color: inherit;">Quên mật khẩu</a></p>
-                <p>HAY</p>
-                <p><a href="signup.html" style="text-decoration: none; color: inherit;">Chưa có tài khoản?</a></p> 
-              </div>
+                </div>
             </form>
           </div>
         </div>
+      </div>
     </div>
   </section>
   <!-- end book section -->

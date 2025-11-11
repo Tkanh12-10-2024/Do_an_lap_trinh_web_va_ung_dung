@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quản lý Phiếu Nhập | Admin Bán Lẩu</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    .sidebar {
+      background-color: #212529;
+    }
+    .nav-link.active {
+      background-color: #f8b400;
+      color: #212529 !important;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    .nav-link:hover {
+      background-color: #ffc107;
+      color: #212529 !important;
+    }
+    #timKiem {
+      border: 2px solid #f8b400;
+      border-radius: 8px;
+      padding: 6px 12px;
+      transition: 0.3s;
+    }
+    #timKiem:focus {
+      outline: none;
+      border-color: #ffc107;
+    box-shadow: 0 0 6px rgba(255, 193, 7, 0.6);
+    }
+  </style>
+</head>
+<body style="background-color: rgb(139, 133, 133) !important">
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <nav class="sidebar text-white p-3 vh-100">
+      <h4 class="text-center mb-4">🍲 Lẩu Ngon Admin</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="admin-dashborad.html" class="nav-link text-white"><i class="fa fa-chart-line me-2"></i> Tổng quan</a></li>
+        <li class="nav-item"><a href="food.html" class="nav-link text-white"><i class="fa fa-bowl-food me-2"></i> Món ăn</a></li>
+        <li class="nav-item"><a href="order.html" class="nav-link text-white"><i class="fa fa-box me-2"></i> Đơn hàng</a></li>        
+        <li class="nav-item"><a href="user.html" class="nav-link text-white"><i class="fa fa-users me-2"></i> Khách hàng</a></li>
+        <li class="nav-item"><a href="charst.html" class="nav-link text-white"><i class="fa fa-chart-pie me-2"></i> Thống kê</a></li>
+        <li class="nav-item"><a href="import.html" class="nav-link active text-white"><i class="fa fa-file-invoice me-2"></i> Phiếu nhập</a></li>
+        <li class="nav-item"><a href="inventory.html" class="nav-link text-white"><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-grow-1 p-4 bg-light" style="background-color: rgb(139, 133, 133) !important">
+      <h2 class="fw-bold mb-4" style="text-align: center;">Quản lý Phiếu Nhập</h2>
+      <div class="d-flex justify-content-end mb-3">
+        <input
+          type="text"
+          id="timKiem"
+          class="form-control w-25"
+          placeholder="🔍 Tìm theo mã hoặc ngày"
+          onkeyup="timKiemPhieuNhap()"
+        />
+    </div>
+
+      <!-- Form nhập phiếu -->
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">Nhập phiếu mới</div>
+        <div class="card-body">
+          <form id="formPhieuNhap">
+            <div class="row mb-3">
+              <div class="col-md-3">
+                <label class="form-label">Mã phiếu</label>
+                <input type="text" class="form-control" placeholder="PN001" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Ngày nhập</label>
+                <input type="date" class="form-control" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Nhà cung cấp</label>
+                <input type="text" class="form-control" placeholder="Công ty ABC" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Tổng tiền</label>
+                <input type="number" class="form-control" placeholder="0" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-plus me-2"></i>Thêm phiếu</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Danh sách phiếu nhập -->
+      <div class="card shadow-sm">
+        <div class="card-header bg-white fw-bold">Danh sách phiếu nhập</div>
+        <div class="card-body">
+          <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th>ID</th>
+                <th>Nhà cung cấp</th>
+                <th>Tổng tiền</th>
+                <th>Ngày nhập</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="tablePhieuNhap">
+              <tr>
+                <td>PN001</td>
+                <td>Công ty ABC</td>
+                <td>5.000.000₫</td>
+                <td>01/11/2025</td>
+                <td><span class="badge bg-success">Hoàn tất</span></td>
+                <td>
+                  <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>PN002</td>
+                <td>Công ty XYZ</td>
+                <td>3.200.000₫</td>
+                <td>02/11/2025</td>
+                <td><span class="badge bg-warning text-dark">Đang xử lý</span></td>
+                <td>
+                  <button class="btn btn-sm btn-success"><i class="fa fa-check"></i></button>
+                  <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+  // Xử lý thêm phiếu nhập vào bảng
+   const form = document.getElementById('formPhieuNhap');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Ngăn trang load lại
+    alert('✅ Đã thêm phiếu nhập thành công!');
+  });
+
+  // ❌ Không xóa, không cập nhật — chỉ hiển thị thông báo
+  table.addEventListener('click', function(e) {
+    if (e.target.closest('.btn-danger')) {
+      alert('✅ Đã xóa (demo - không thay đổi dữ liệu)');
+    } else if (e.target.closest('.btn-success')) {
+      alert('✅ Đã cập nhật trạng thái (demo - không thay đổi dữ liệu)');
+    }
+  });
+</script>
+
+</body>
+</html>

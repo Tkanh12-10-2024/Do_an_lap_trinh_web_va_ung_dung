@@ -50,10 +50,14 @@
       <!-- Sidebar -->
       <nav class="sidebar text-white p-3 vh-100">
         <h4 class="text-center mb-4" >
-          <a style="color:blanchedalmond" >🍲 Lẩu Ngon Admin</a>
+          <a style="color:blanchedalmond" href="./user/index.html">🍲 Lẩu Ngon </a>
         </h4>
         <ul class="nav flex-column">
-          
+          <li class="nav-item">
+            <a href="user/index - signin.html" class="nav-link text-white"
+              ><i class="fa fa-home me-2"></i> Trang chủ</a
+            >
+          </li>
           <li class="nav-item">
             <a href="admin-dashborad.html" class="nav-link text-white"
               ><i class="fa fa-chart-line me-2"></i> Tổng quan</a
@@ -191,15 +195,42 @@
 
     <script>
       function addUser() {
+        const id = document.getElementById("id").value;
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const point = document.getElementById("point").value;
+        const table = document.getElementById("userTable");
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${id}</td><td>${name}</td><td>${phone}</td><td>${point}</td>`;
+        table.appendChild(row);
         alert("Đã thêm khách hàng mới!");
         document.getElementById("userForm").reset();
       }
 
       function editUser() {
+        const id = document.getElementById("id").value;
+        const rows = document.querySelectorAll("#userTable tr");
+        let found = false;
+        rows.forEach((row) => {
+          if (row.children[0].innerText === id) {
+            row.children[1].innerText = document.getElementById("name").value;
+            row.children[2].innerText = document.getElementById("phone").value;
+            row.children[3].innerText = document.getElementById("point").value;
+            found = true;
+          }
+        });
         alert("Đã sửa thông tin khách hàng!");
       }
 
       function deleteUser() {
+        const id = document.getElementById("id").value;
+        const table = document.getElementById("userTable");
+        for (let i = 0; i < table.rows.length; i++) {
+          if (table.rows[i].cells[0].innerText === id) {
+            table.deleteRow(i);
+            break;
+          }
+        }
         alert("Đã xóa khách hàng!");
       }
     </script>
