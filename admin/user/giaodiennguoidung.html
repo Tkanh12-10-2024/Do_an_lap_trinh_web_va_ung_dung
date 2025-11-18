@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="giỏ hàng, khk restaurant" />
+  <meta name="description" content="Trang giỏ hàng KHK Restaurant" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <title>Chi tiết người dùng | KHK Restaurant</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+      body {
+        background-color: #111;
+        color: #fff;
+        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .logo a {
+        color: #f6b93b;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .profile-section {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #1c1c1c;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      }
+
+      .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+
+      .profile-header img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #f6b93b;
+      }
+
+      .profile-header h2 {
+        font-size: 26px;
+        color: #f6b93b;
+        margin: 0;
+      }
+
+      .profile-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 30px;
+      }
+
+      .profile-info label {
+        display: block;
+        color: #aaa;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .profile-info input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        background: #222;
+        color: #fff;
+        transition: 0.3s;
+      }
+
+      .profile-info input:focus {
+        outline: 2px solid #f6b93b;
+      }
+
+      .edit-btn {
+        display: inline-block;
+        margin-top: 20px;
+        background: #f6b93b;
+        color: #000;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .edit-btn:hover {
+        background: #fff;
+        color: #000;
+      }
+
+      .order-history {
+        margin-top: 60px;
+      }
+
+      .order-history h3 {
+        color: #f6b93b;
+        font-size: 22px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #1a1a1a;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      th,
+      td {
+        padding: 14px 16px;
+        text-align: left;
+      }
+
+      th {
+        background: #222;
+        color: #f6b93b;
+      }
+
+      tr:nth-child(even) {
+        background: #181818;
+      }
+
+      tr:hover {
+        background: #2a2a2a;
+      }
+
+      .status {
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .status.done {
+        background: #28a745;
+        color: #fff;
+      }
+
+      .status.pending {
+        background: #ffc107;
+        color: #000;
+      }
+
+      .status.cancel {
+        background: #dc3545;
+        color: #fff;
+      }
+
+      /* ===== Popup chi tiết đơn hàng ===== */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 200;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: #1c1c1c;
+        padding: 20px 30px;
+        border-radius: 10px;
+        width: 400px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        position: relative;
+      }
+
+      .modal-content h3 {
+        color: #f6b93b;
+        margin-top: 0;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .close-btn:hover {
+        color: #f6b93b;
+      }
+
+      @media (max-width: 768px) {
+        .profile-info {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    
+<!-- header section starts -->
+<header class="header_section">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" href="trangchu.html">
+        <span>Lẩu ngon</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""> </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mx-auto ">
+          <li class="nav-item">
+            <a class="nav-link" href="index - signin.html">Trang chủ <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="menu-signin.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="giohang .html">Giỏ hàng</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Đăng xuất</a></li>
+        </ul>
+
+        <div class="user_option">
+          <a href="giaodiennguoidung.html" class="user_link"><i class="fa fa-user" aria-hidden="true"></i></a>
+
+          
+
+          <a href="menu-signin.html" class="btn my-2 my-sm-0 nav_search-btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+
+          <!-- ✅ Nút đăng nhập / hiển thị tên -->
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Script kiểm tra đăng nhập -->
+<script>
+  // --- HÀM XỬ LÝ DỮ LIỆU GIỎ HÀNG VÀ CẬP NHẬT COUNT ---
+  function getCart() {
+      const cart = localStorage.getItem('cart');
+      return cart ? JSON.parse(cart) : [];
+  }
+  
+  function updateCartCount() {
+      const cart = getCart();
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      
+      let cartCountElement = document.getElementById('cart-count');
+      const cartLink = document.querySelector('.cart_link');
+      
+      if (cartLink) {
+          // QUAN TRỌNG: Đặt position: relative cho cart_link để badge con định vị đúng
+          cartLink.style.position = 'relative'; 
+
+          if (!cartCountElement) {
+              cartCountElement = document.createElement('span');
+              cartCountElement.id = 'cart-count';
+              
+              // CSS ĐÃ CHỈNH SỬA: Đảm bảo hình tròn luôn tròn (min-width/height)
+              cartCountElement.style.cssText = `
+                  position: absolute; 
+                  top: -12px; 
+                  right: -12px; 
+                  background: red; 
+                  color: white; 
+                  border-radius: 50%; 
+                  font-size: 0.7em; 
+                  font-weight: bold; 
+                  min-width: 20px; 
+                  height: 20px; 
+                  line-height: 20px; 
+                  text-align: center; 
+              `;
+              cartLink.appendChild(cartCountElement);
+          }
+
+          if (cartCountElement) {
+              cartCountElement.textContent = totalItems > 0 ? totalItems : '';
+              cartCountElement.style.display = totalItems > 0 ? 'inline-block' : 'none';
+          }
+      }
+  }
+  // --- HẾT HÀM CẬP NHẬT SỐ LƯỢNG ---
+
+  document.addEventListener("DOMContentLoaded", () => {
+      // Tìm phần tử kích hoạt profile (username/Đăng nhập button)
+      const profileTrigger = document.querySelector(".order_online");
+  
+      // Lấy tên đăng nhập
+      const loggedInUser = localStorage.getItem("loggedInUser") || localStorage.getItem("username"); 
+  
+      if (profileTrigger) {
+          if (loggedInUser) {
+              // ✅ CHẾ ĐỘ ĐÃ ĐĂNG NHẬP
+              profileTrigger.textContent = "Nguyễn Văn Tèo";
+              profileTrigger.href = "giaodiennguoidung.html"; 
+  
+              // 3. Xử lý logic Dropdown (Tạo nút Đăng xuất)
+              const logoutButton = document.createElement('a');
+              logoutButton.textContent = 'Đăng xuất';
+              logoutButton.href = '#';
+              logoutButton.className = 'logout-dropdown-link';
+              
+              const dropdownContainer = document.createElement('div');
+              dropdownContainer.className = 'profile-dropdown-content';
+              dropdownContainer.style.cssText = 'position: absolute; background: #333; z-index: 10; min-width: 150px; padding: 5px; border-radius: 4px; top: 100%; right: 0; display: none;';
+              
+              dropdownContainer.appendChild(logoutButton);
+              profileTrigger.parentElement.style.position = 'relative';   
+              profileTrigger.parentElement.appendChild(dropdownContainer);
+              
+              logoutButton.style.cssText = 'color: #fff; text-decoration: none; display: block; padding: 8px 10px; text-align: center;';
+  
+              // Xử lý hover
+              profileTrigger.parentElement.addEventListener('mouseenter', () => {
+                  dropdownContainer.style.display = 'block';
+              });
+              profileTrigger.parentElement.addEventListener('mouseleave', () => {
+                  dropdownContainer.style.display = 'none';
+              });
+  
+              // ✅ Xử lý Đăng xuất bằng SweetAlert2
+              logoutButton.addEventListener("click", (e) => {
+                  e.preventDefault();
+                  Swal.fire({
+                      title: `Chào ${loggedInUser}!`,
+                      text: "Bạn có chắc chắn muốn đăng xuất không?",
+                      icon: 'question',
+                      showCancelButton: true,
+                      confirmButtonColor: '#d33', // Màu đỏ cho Đăng xuất
+                      cancelButtonColor: '#3085d6',
+                      confirmButtonText: 'Đăng xuất',
+                      cancelButtonText: 'Hủy'
+                  }).then((result) => {
+                      if (result.isConfirmed) {
+                          // Xóa thông tin đăng nhập
+                          localStorage.removeItem("loggedInUser");
+                          localStorage.removeItem("username");
+                          
+                          // Hiển thị thông báo đăng xuất thành công (Toast)
+                          Swal.fire({
+                              icon: 'success',
+                              title: 'Đã đăng xuất!',
+                              text: 'Bạn sẽ được chuyển hướng đến trang đăng nhập.',
+                              showConfirmButton: false,
+                              timer: 1500,
+                              toast: true,
+                              position: 'top-end'
+                          });
+
+                          // Chuyển hướng sau 1.5 giây
+                          setTimeout(() => {
+                              window.location.href = "index.html"; 
+                          }, 1500);
+                      }
+                  });
+              });
+  
+          } else {
+              // ✅ CHẾ ĐỘ CHƯA ĐĂNG NHẬP
+              profileTrigger.textContent = "Đăng nhập";
+              profileTrigger.href = "index.html"; // Chuyển đến trang login khi click
+          }
+      }
+      // Gọi hàm cập nhật số lượng giỏ hàng khi trang tải
+      updateCartCount();
+  });
+</script>
+
+
+<!-- end header section -->
+  </div>
+    <main>
+      <section class="profile-section">
+        <div class="profile-header">
+          <img src="images/client2.jpg" alt="avatar" />
+          <div>
+            <h2>Tommy Tèo</h2>
+            <p>Thành viên từ: 24/12/2019</p>
+          </div>
+        </div>
+
+        <div class="profile-info">
+          <div>
+            <label>Họ và tên</label>
+            <input type="text" id="name" value="Tommy Tèo" disabled />
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" id="email" value="vana@example.com" disabled />
+          </div>
+          <div>
+            <label>Số điện thoại</label>
+            <input type="number" id="phone" value="0901234567" disabled />
+          </div>
+          <div>
+            <label>Địa chỉ</label>
+            <input
+              type="text"
+              id="address"
+              value="69 Huỳnh Tấn Phát, P69, TP.HCM"
+              disabled
+            />
+          </div>
+        </div>
+
+        <button class="edit-btn" id="editBtn">Chỉnh sửa thông tin</button>
+
+        <div class="order-history">
+          <h3>Lịch sử mua hàng</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Ngày đặt</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#DH001</td>
+                <td>15/10/2025</td>
+                <td>235.000₫</td>
+                <td><span class="status done">Hoàn tất</span></td>
+                <td>
+                  <a
+                    href="#"
+                    class="view-detail"
+                    data-id="1"
+                    style="color: #f6b93b"
+                    >Xem chi tiết</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>#DH002</td>
+                <td>09/10/2025</td>
+                <td>185.000₫</td>
+                <td><span class="status pending">Đang giao</span></td>
+                <td>
+                  <a
+                    href="#"
+                    class="view-detail"
+                    data-id="2"
+                    style="color: #f6b93b"
+                    >Xem chi tiết</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>#DH003</td>
+                <td>05/10/2025</td>
+                <td>150.000₫</td>
+                <td><span class="status cancel">Đã hủy</span></td>
+                <td>
+                  <a
+                    href="#"
+                    class="view-detail"
+                    data-id="3"
+                    style="color: #f6b93b"
+                    >Xem chi tiết</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- Popup xem chi tiết -->
+    <div class="modal" id="orderModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h3>Chi tiết đơn hàng</h3>
+        <p><strong>Mã đơn:</strong> <span id="modalOrderId"></span></p>
+        <p><strong>Chi tiết:</strong><span id="modalOrderDetail"></span></p>
+        <p><strong>Ngày đặt:</strong> <span id="modalOrderDate"></span></p>
+        <p><strong>Địa chỉ:</strong> <span id="modalOrderAddress"></span></p>
+        <p><strong>Tổng tiền:</strong> <span id="modalOrderTotal"></span></p>
+        <p><strong>Trạng thái:</strong> <span id="modalOrderStatus"></span></p>
+        <p>
+          <strong>Ghi chú:</strong> <span id="modalOrderNote"></span>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const editBtn = document.getElementById("editBtn");
+      const inputs = document.querySelectorAll(".profile-info input");
+      let isEditing = false;
+
+      editBtn.addEventListener("click", () => {
+        isEditing = !isEditing;
+        inputs.forEach((input) => (input.disabled = !isEditing));
+        if (isEditing) {
+          editBtn.textContent = "Lưu lại";
+          editBtn.style.background = "#28a745";
+          editBtn.style.color = "#fff";
+        } else {
+          editBtn.textContent = "Chỉnh sửa thông tin";
+          editBtn.style.background = "#f6b93b";
+          editBtn.style.color = "#000";
+          alert("Thông tin đã được lưu thành công!");
+        }
+      });
+
+      // ======= Dữ liệu giả cho đơn hàng =======
+      const orders = {
+        1: {
+          id: "#DH001",
+          date: "15/10/2025",
+          total: "235.000₫",
+          status: "Hoàn tất",
+          detail: "Lẩu cua đồng",
+          note: "Không lấy ghẹ",
+          address: "69 Huỳnh Tấn Phát, P69, TP.HCM",
+        },
+        2: {
+          id: "#DH002",
+          date: "09/10/2025",
+          total: "185.000₫",
+          status: "Đang giao",
+          detail: "Lẩu hải sản",
+          note: "Không tanh",
+          address: "69 Huỳnh Tấn Phát, P69, TP.HCM",
+        },
+        3: {
+          id: "#DH003",
+          date: "05/10/2025",
+          total: "150.000₫",
+          status: "Đã hủy",
+          detail: "Lẩu bò",
+          note: "Không lấy thịt đỏ",
+          address: "69 Huỳnh Tấn Phát, P69, TP.HCM",
+        },
+      };
+
+      // ======= Mở popup khi bấm "Xem chi tiết" =======
+      const modal = document.getElementById("orderModal");
+      const closeModal = document.getElementById("closeModal");
+
+      document.querySelectorAll(".view-detail").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const id = btn.dataset.id;
+          const order = orders[id];
+          document.getElementById("modalOrderId").textContent = order.id;
+          document.getElementById("modalOrderDate").textContent = order.date;
+          document.getElementById("modalOrderTotal").textContent = order.total;
+          document.getElementById("modalOrderStatus").textContent = order.status;
+          document.getElementById("modalOrderDetail").textContent = order.detail;
+          document.getElementById("modalOrderNote").textContent = order.note;
+          document.getElementById("modalOrderAddress").textContent = order.address;
+          modal.style.display = "flex";
+        });
+      });
+
+      // ======= Đóng popup =======
+      closeModal.addEventListener(
+        "click",
+        () => (modal.style.display = "none")
+      );
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) modal.style.display = "none";
+      });
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+  
+  <!-- Script xử lý tìm kiếm ĐÃ SỬA -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('menu-search');
+      const searchBtn = document.getElementById('search-btn');
+      const searchResultsInfo = document.getElementById('search-results-info');
+      const allMenuItems = document.querySelectorAll('.col-sm-6.col-lg-4.all');
+      
+      // --- PHẦN CODE XỬ LÝ GIỎ HÀNG (Giữ nguyên) ---
+      // (Mình rút gọn phần này cho dễ nhìn, bạn chỉ cần copy cả khối script)
+      
+      function getCart() {
+        const cart = localStorage.getItem('cart');
+        return cart ? JSON.parse(cart) : [];
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+
+      function addToCartMenu(event) {
+        event.preventDefault(); 
+        const button = event.currentTarget;
+        const box = button.closest('.box');
+        
+        const id = button.getAttribute('data-id');
+        const name = box.querySelector('.detail-box h5 a').textContent.trim();
+        const priceElement = box.querySelector('.detail-box h6');
+        const priceText = priceElement.textContent.trim();
+        const priceCleaned = priceText.replace(/[.VNĐ₫ ]/g, '');
+        const price = parseInt(priceCleaned);
+        const image = box.querySelector('.img-box img').getAttribute('src'); 
+
+        if (!id || isNaN(price) || price === 0) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Lỗi',
+            text: 'Không thể trích xuất giá hoặc ID sản phẩm.',
+          });
+          return;
+        }
+
+        let cart = getCart();
+        const existingItem = cart.find(item => item.id === id);
+
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          const item = {
+            id: id,
+            name: name,
+            price: price,
+            quantity: 1,
+            image: image 
+          };
+          cart.push(item);
+        }
+
+        saveCart(cart);
+        if (typeof updateCartCount === 'function') {
+          updateCartCount(); 
+        }
+        
+        Swal.fire({
+          icon: 'success',
+          title: 'Đã thêm vào giỏ hàng!',
+          text: `${name} (1 sản phẩm) đã được thêm vào giỏ.`,
+          showConfirmButton: false,
+          timer: 1800,
+          toast: true,
+          position: 'top-end'
+        });
+      }
+
+      const menuButtons = document.querySelectorAll('.add-to-cart-btn');
+      menuButtons.forEach(button => {
+        button.addEventListener('click', addToCartMenu);
+      });
+    });
+  </script>
+  </body>
+</html>
+

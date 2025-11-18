@@ -78,7 +78,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="giohang.html">Giỏ Hàng</a>
+                  <a class="nav-link" href="giohang .html">Giỏ Hàng</a>
                 </li>
               <li class="nav-item">
                 <a class="nav-link" href="index.html">ĐĂNG XUẤT</a>
@@ -105,7 +105,7 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </button>
                 </form>
-                <a href="" class="order_online"> Khach Hang A</a>
+                <a href="giaodiennguoidung.html" class="order_online">Anh Tèo</a>
               </div>
             </div>
           </nav>
@@ -123,11 +123,11 @@
         </div>
 
         <ul class="filters_menu">
-           <a href="menu-signin.html" style="text-decoration: none; color: inherit;"><li class="active" data-filter="*">All</li></a>
-        <a href="menu-cua-signin.html" style="text-decoration: none; color: inherit;"><li data-filter=".burger">Lẩu cua đồng</li></a>
-        <a href="menu-haisan-signin.html" style="text-decoration: none; color: inherit;"><li  data-filter=".pizza">Lẩu hải sản</li></a>
-        <a href="menu-bo-signin.html" style="text-decoration: none; color: inherit;"><li data-filter=".pasta">Lẩu bò</li></a>
-        <a href="menu-doanthem-signin.html" style="text-decoration: none; color: inherit;"><li data-filter=".fries">Đồ ăn thêm</li></a>
+        <li class="active" data-filter="*">All</li>
+        <li data-filter=".burger">Lẩu cua đồng</li>
+        <li data-filter=".pizza">Lẩu hải sản</li>
+        <li data-filter=".pasta">Lẩu bò</li>
+        <li data-filter=".fries">Đồ ăn thêm</li>
         </ul>
 
         <div class="filters-content">
@@ -136,7 +136,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f1.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f1.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Lẩu Cua Đồng</h5>
@@ -218,7 +218,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f2.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f2.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Lẩu Hải Sản</h5>
@@ -293,7 +293,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f3.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f3.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Lẩu Bò</h5>
@@ -367,7 +367,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f4.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f4.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Tôm</h5>
@@ -441,7 +441,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f5.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f5.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Thịt Bò</h5>
@@ -515,7 +515,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f6.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f6.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Rau</h5>
@@ -589,7 +589,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f7.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f7.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Mực</h5>
@@ -663,7 +663,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f8.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f8.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Nước Ngọt</h5>
@@ -738,7 +738,7 @@
               <div class="box">
                 <div>
                   <div class="img-box">
-                    <img src="images/f9.png" alt="" />
+                    <a href="productdetails.html"><img src="images/f9.png" alt="" /></a>
                   </div>
                   <div class="detail-box">
                     <h5>Bia Tiger</h5>
@@ -811,9 +811,7 @@
             </div>
           </div>
         </div>
-        <div class="btn-box">
-          <a href=""> Trang tiếp </a>
-        </div>
+        
       </div>
     </section>
 
@@ -880,8 +878,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-    <!-- End Google Map -->
+    <script>
+    $(window).on('load', function () {
+    // Khởi tạo Isotope
+    var $grid = $(".grid").isotope({
+      itemSelector: ".all",
+      percentPosition: false,
+      masonry: {
+        columnWidth: ".all"
+      }
+    });
+
+    // Xử lý khi click menu lọc
+    $('.filters_menu li').on('click', function () {
+      $('.filters_menu li').removeClass('active');
+      $(this).addClass('active');
+
+      var data = $(this).attr('data-filter');
+      $grid.isotope({ filter: data });
+    });
+  });
+  </script>
   </body>
 </html>

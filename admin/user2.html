@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<!-- saved from url=(0039)http://127.0.0.1:5500/admin/user.html?# -->
-<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
     <title>Quản lý khách hàng | Admin Bán Lẩu</title>
-    <link href="./Quản lý khách hàng _ Admin Bán Lẩu_files/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./Quản lý khách hàng _ Admin Bán Lẩu_files/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <style>
       body {
         background-color: rgb(139, 133, 133) !important;
@@ -297,244 +303,63 @@
       }
 
     </style>
-  <style>.--savior-overlay-transform-reset {
-  transform: none !important;
-}
-.--savior-overlay-z-index-top {
-  z-index: 2147483643 !important;
-}
-.--savior-overlay-position-relative {
-  position: relative;
-}
-.--savior-overlay-position-static {
-  position: static !important;
-}
-.--savior-overlay-overflow-hidden {
-  overflow: hidden !important;
-}
-.--savior-overlay-overflow-x-visible {
-  overflow-x: visible !important;
-}
-.--savior-overlay-overflow-y-visible {
-  overflow-y: visible !important;
-}
-.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-.--savior-overlay-display-none {
-  display: none !important;
-}
-.--savior-overlay-clearfix {
-  clear: both;
-}
-.--savior-overlay-reset-filter {
-  filter: none !important;
-  backdrop-filter: none !important;
-}
-.--savior-tooltip-host {
-  z-index: 9999;
-  position: absolute;
-  top: 0;
-}
-/*Override css styles for Twitch.tv*/
-main.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-.modal__backdrop.--savior-overlay-z-index-reset {
-  position: static !important;
-}
-main.--savior-overlay-z-index-top {
-  z-index: auto !important;
-}
-main.--savior-overlay-z-index-top .channel-root__player-container + div,
-main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
-  opacity: 0.1;
-}
-/*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
-.--savior-backdrop {
-  position: fixed !important;
-  z-index: 2147483642 !important;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw !important;
-  background-color: rgba(0,0,0,0.9);
-}
-.--savior-overlay-twitter-video-player {
-  position: fixed;
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
-}
-.--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
-.--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
-.--savior-overlay-z-index-reset [class*="DivBottomContainer"],
-.--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
-.--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
-.--savior-overlay-z-index-reset header[role="banner"],
-.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
-.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
-.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
-  z-index: -1 !important;
-}
-.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
-  z-index: 2147483643 !important;
-}
-.--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
-  z-index: 0 !important;
-}
-.--savior-overlay-z-index-reset#mtLayer,
-.--savior-overlay-z-index-reset.media-layer {
-  z-index: 3000 !important;
-}
-.--savior-overlay-position-relative [class*="SecBar_secBar_"],
-.--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
-  z-index: 0 !important;
-}
-.--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
-.--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
-.--savior-overlay-position-relative [class*="Main_side_"] {
-  z-index: -1 !important;
-}
-/* Fix conflict css with zingmp3 */
-.zm-video-modal.--savior-overlay-z-index-reset {
-  position: absolute;
-}
-/* Dirty hack for xvideos99 */
-#page #main.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-/* Overlay for ok.ru */
-#vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
-  overflow-y: hidden;
-  z-index: 2147483643 !important;
-}
-/* Fix missing controller for tv.naver.com */
-.--savior-overlay-z-index-top.rmc_controller,
-.--savior-overlay-z-index-top.rmc_setting_intro,
-.--savior-overlay-z-index-top.rmc_highlight,
-.--savior-overlay-z-index-top.rmc_control_settings {
-  z-index: 2147483644 !important;
-}
-/* Dirty hack for douyi.com */
-.swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
-.swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
-  display: none;
-}
-.videoWrap + div > div {
-  pointer-events: unset;
-}
-/* Dirty hack for fpt.ai */
-.mfp-wrap.--savior-overlay-z-index-top {
-  position: relative;
-}
-.mfp-wrap.--savior-overlay-z-index-top .mfp-close {
-  display: none;
-}
-.mfp-wrap.--savior-overlay-z-index-top .mfp-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
-  z-index: -1 !important;
-}
-section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
-  position: relative;
-}
-.watching-movie #video-player.--savior-overlay-z-index-top {
-  z-index: 2147483644 !important;
-}
-div[class^="tiktok"].--savior-overlay-z-index-reset {
-  z-index: 2147483644 !important;
-}
-.--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
-.--savior-lightoff-fix section.section_video ~ section {
-  z-index: -1;
-  position: relative;
-}
-.--savior-lightoff-fix header,
-.--savior-lightoff-fix footer,
-.--savior-lightoff-fix .top-header,
-.--savior-lightoff-fix .swiper-container,
-.--savior-lightoff-fix #to_top,
-.--savior-lightoff-fix #button-adblock {
-  z-index: -1 !important;
-}
-@-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-o-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-</style></head>
+  </head>
   <body>
     <div class="d-flex">
       <!-- Sidebar -->
       <nav class="sidebar text-white p-3 vh-100">
-        <h4 class="text-center mb-4">
-          <a style="color:blanchedalmond" href="http://127.0.0.1:5500/admin/user/index.html">🍲 Lẩu Ngon </a>
+        <h4 class="text-center mb-4" >
+          <a style="color:blanchedalmond" href="./user/index.html">🍲 Lẩu Ngon </a>
         </h4>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a href="http://127.0.0.1:5500/admin/user/index%20-%20signin.html" class="nav-link text-white"><i class="fa fa-home me-2"></i> Trang chủ</a>
+            <a href="user/index - signin.html" class="nav-link text-white"
+              ><i class="fa fa-home me-2"></i> Trang chủ</a
+            >
           </li>
           <li class="nav-item">
-            <a href="http://127.0.0.1:5500/admin/admin-dashborad.html" class="nav-link text-white"><i class="fa fa-chart-line me-2"></i> Tổng quan</a>
+            <a href="admin-dashborad.html" class="nav-link text-white"
+              ><i class="fa fa-chart-line me-2"></i> Tổng quan</a
+            >
           </li>
           <li class="nav-item">
-            <a href="http://127.0.0.1:5500/admin/food.html" class="nav-link text-white"><i class="fa fa-bowl-food me-2"></i> Món ăn</a>
+            <a href="food.html" class="nav-link text-white"
+              ><i class="fa fa-bowl-food me-2"></i> Món ăn</a
+            >
           </li>
           <li class="nav-item">
-            <a href="http://127.0.0.1:5500/admin/order.html" class="nav-link text-white"><i class="fa fa-box me-2"></i> Đơn hàng</a>
+            <a href="order.html" class="nav-link text-white"
+              ><i class="fa fa-box me-2"></i> Đơn hàng</a
+            >
           </li>
           <li class="nav-item">
-            <a href="http://127.0.0.1:5500/admin/user.html" class="nav-link active text-white"><i class="fa fa-users me-2"></i> Khách hàng</a>
+            <a href="user.html" class="nav-link active text-white"
+              ><i class="fa fa-users me-2"></i> Khách hàng</a
+            >
           </li>
           <li class="nav-item">
-            <a href="http://127.0.0.1:5500/admin/charst.html" class="nav-link text-white"><i class="fa fa-chart-pie me-2"></i> Thống kê</a>
+            <a href="charst.html" class="nav-link text-white"
+              ><i class="fa fa-chart-pie me-2"></i> Thống kê</a
+            >
           </li>
           <li class="nav-item">
-            <a href="http://127.0.0.1:5500/admin/inventory.html" class="nav-link text-white"><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a>
+            <a href="inventory.html" class="nav-link text-white"
+              ><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a
+            >
           </li>
         </ul>
       </nav>
 
       <!-- Main Content -->
-      <main class="flex-grow-1 p-4 bg-light" style="background-color: rgb(139, 133, 133) !important">
+      <main
+        class="flex-grow-1 p-4 bg-light"
+        style="background-color: rgb(139, 133, 133) !important"
+      >
         <h2 class="fw-bold mb-4 text-center">Quản lý khách hàng</h2>
 
         <!-- Bảng khách hàng -->
         <div class="card mb-4">
-          <div class="card-header bg-dark text-white fw-bold" style="text-align: center;">
+          <div class="card-header bg-dark text-white fw-bold"  style="text-align: center;">
             Danh sách khách hàng
           </div>
           <div class="card-body p-0">
@@ -553,23 +378,23 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
                 <tr>
                   <td>Trần B</td>
                   <td>Btran@ex.com</td>
-                  <td>0901234567</td>
+                  <td>0909123456</td>
                   <td>120</td>
 
                   <td>
-                     <button type="button" class="btn btn-success">Hoạt động</button>
+                     <button type="button" class="btn btn-success" >Hoạt động</button>
                   </td>
                   <td>
                     <!-- Nút xem chi tiết -->
-                    <a href="http://127.0.0.1:5500/admin/user.html?#viewCustomer" class="btn btn-sm btn-outline-info me-1" title="Xem chi tiết">
+                    <a href="#viewCustomer" class="btn btn-sm btn-outline-info me-1" title="Xem chi tiết">
                       <i class="fas fa-eye"></i>
                     </a>
                     <!-- (MỚI) Nút Reset Mật khẩu -->
-                    <a href="http://127.0.0.1:5500/admin/user.html?#confirmResetPass" class="btn btn-sm btn-outline-warning me-1" title="Reset mật khẩu">
+                    <a href="#confirmResetPass" class="btn btn-sm btn-outline-warning me-1" title="Reset mật khẩu">
                       <i class="fas fa-key"></i>
                     </a>
                     <!-- (MỚI) Nút Khóa -->
-                    <a href="http://127.0.0.1:5500/admin/user.html?#confirmLock" class="btn btn-sm btn-outline-danger" title="Khóa tài khoản">
+                    <a href="#confirmLock" class="btn btn-sm btn-outline-danger" title="Khóa tài khoản">
                       <i class="fas fa-lock"></i>
                     </a>
                   </td>
@@ -580,19 +405,19 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
                   <td>0909456789</td>
                   <td>90</td>
                   <td>
-                     <button type="button" class="btn btn-success">Hoạt động</button>
+                     <button type="button" class="btn btn-success" >Hoạt động</button>
                   </td>
                   <td>
                     <!-- Nút xem chi tiết -->
-                    <a href="http://127.0.0.1:5500/admin/user.html?#viewCustomer" class="btn btn-sm btn-outline-info me-1" title="Xem chi tiết">
+                    <a href="#viewCustomer" class="btn btn-sm btn-outline-info me-1" title="Xem chi tiết">
                       <i class="fas fa-eye"></i>
                     </a>
                     <!-- (MỚI) Nút Reset Mật khẩu -->
-                    <a href="http://127.0.0.1:5500/admin/user.html?#confirmResetPass" class="btn btn-sm btn-outline-warning me-1" title="Reset mật khẩu">
+                    <a href="#confirmResetPass" class="btn btn-sm btn-outline-warning me-1" title="Reset mật khẩu">
                       <i class="fas fa-key"></i>
                     </a>
                     <!-- (MỚI) Nút Khóa -->
-                    <a href="http://127.0.0.1:5500/admin/user.html?#confirmLock" class="btn btn-sm btn-outline-danger" title="Khóa tài khoản">
+                    <a href="#confirmLock" class="btn btn-sm btn-outline-danger" title="Khóa tài khoản">
                       <i class="fas fa-lock"></i>
                     </a>
                   </td>
@@ -604,31 +429,60 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
 
         <!-- Form khách hàng -->
         <div class="card p-4">
-          <h5 class="fw-bold mb-3" style="text-align:center;">
+          <h5 class="fw-bold mb-3">
             <i class="fa fa-user-pen me-2"></i> Thêm / Xóa khách hàng
           </h5>
-    <div class="card mb-4">
-        <div class="card-body">
-          <form class="row g-3 filter-bar">
-            <div class="col-md-5">
-              <input type="text" class="form-control" placeholder="Tìm theo tên, email hoặc SĐT...">
+          <form id="userForm" class="row g-3">
+            <div class="col-md-2">
+              <label class="form-label">ID</label>
+              <input
+                type="text"
+                id="id"
+                class="form-control"
+                placeholder="ID khách hàng"
+              />
             </div>
             <div class="col-md-4">
-              <select class="form-select">
-                <option value="">Tất cả trạng thái</option>
-                <option value="active">Hoạt động</option>
-                <option value="locked">Bị khóa</option>
-              </select>
+              <label class="form-label">Tên khách hàng</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Tên khách hàng"
+              />
             </div>
             <div class="col-md-3">
-              <button class="btn btn-primary w-100">
-                <i class="fas fa-search"></i> Lọc
+              <label class="form-label">Số điện thoại</label>
+              <input
+                type="text"
+                id="phone"
+                class="form-control"
+                placeholder="Số điện thoại"
+              />
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Điểm tích lũy</label>
+              <input
+                type="number"
+                id="point"
+                class="form-control"
+                placeholder="Điểm"
+              />
+            </div>
+
+            <div class="col-12 text-end">
+              <button type="button" class="btn btn-success" onclick="addUser()">
+                <i class="fa fa-plus me-1"></i> Thêm
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                onclick="deleteUser()"
+              >
+                <i class="fa fa-trash me-1"></i> Xóa
               </button>
             </div>
           </form>
-        </div>
-      </div>
-          
         </div>
       </main>
     </div>
@@ -674,28 +528,199 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
         alert("Đã xóa khách hàng!");
       }
     </script>
-    
+    <body>
     <!-- Sidebar -->
     <div class="sidebar">
-      
-      
+      <div class="sidebar-header">
+        <h3><i class="fas fa-utensils"></i> KHK RESTAURANT ADMIN</h3>
+      </div>
+      <ul class="list-unstyled components">
+        <li>
+          <a href="admin.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li>
+          <a href="menumanagement.html"><i class="fas fa-list"></i> Quản lý Menu</a>
+        </li>
+        <li>
+          <a href="categories.html"><i class="fas fa-tags"></i> Quản lý Loại</a>
+        </li>
+        <li>
+          <a href="orders.html"><i class="fas fa-shopping-cart"></i> Đơn hàng</a>
+        </li>
+        <li>
+          <a href="bookingdetail.html"><i class="fas fa-calendar-alt"></i> Đặt bàn</a>
+        </li>
+        <li class="active">
+          <a href="customers.html"><i class="fas fa-users"></i> Khách hàng</a>
+        </li>
+        <li>
+          <a href="stockmanagement.html"><i class="fas fa-truck-loading"></i> Quản lý Nhập hàng</a>
+        </li>
+
+        <li>
+          <a href="pricing.html"><i class="fas fa-dollar-sign"></i> Quản lý Giá bán</a>
+        </li>
+        <li>
+          <a href="quanlyton.html"><i class="fas fa-boxes"></i> Quản lý Tồn</a>
+        </li>
+        <li>
+          <a href="report.html"><i class="fas fa-chart-bar"></i> Báo cáo</a>
+        </li>
+        <li>
+          <a href="setting.html"><i class="fas fa-cog"></i> Cài đặt</a>
+        </li>
+      </ul>
     </div>
 
     <!-- Content -->
     <div class="content">
-      
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="fas fa-users"></i>Quản lý Khách hàng</h2>
+      </div>
 
       <!-- Thống kê -->
-      
+      <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+          <div class="card stat-card">
+            <i class="fas fa-user-check"></i>
+            <div class="number">24</div>
+            <div class="label">Tài khoản đang online</div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="card stat-card">
+            <i class="fas fa-user-plus"></i>
+            <div class="number">12</div>
+            <div class="label">Tài khoản mới tháng này</div>
+          </div>
+        </div>
+      </div>
 
       <!-- (MỚI) Thanh tìm kiếm -->
-      
+      <div class="card mb-4">
+        <div class="card-body">
+          <form class="row g-3 filter-bar">
+            <div class="col-md-5">
+              <input type="text" class="form-control" placeholder="Tìm theo tên, email hoặc SĐT...">
+            </div>
+            <div class="col-md-4">
+              <select class="form-select">
+                <option value="">Tất cả trạng thái</option>
+                <option value="active">Hoạt động</option>
+                <option value="locked">Bị khóa</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-primary w-100">
+                <i class="fas fa-search"></i> Lọc
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
 
 
       <!-- Bảng khách hàng -->
       <div class="card">
-        
-        
+        <div class="card-header">Danh sách khách hàng</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>Tên khách hàng</th>
+                  <th>Email</th>
+                  <th>Số điện thoại</th>
+                  <th>Số đơn hàng</th>
+                  <th>Trạng thái</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nguyễn Văn A</td>
+                  <td>vana@example.com</td>
+                  <td>0901234567</td>
+                  <td>12</td>
+                  <td><span class="badge badge-success">Hoạt động</span></td>
+                  <td>
+                    <!-- Nút xem chi tiết -->
+                    <a href="#viewCustomer" class="btn btn-sm btn-outline-info me-1" title="Xem chi tiết">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                    <!-- (MỚI) Nút Reset Mật khẩu -->
+                    <a href="#confirmResetPass" class="btn btn-sm btn-outline-warning me-1" title="Reset mật khẩu">
+                      <i class="fas fa-key"></i>
+                    </a>
+                    <!-- (MỚI) Nút Khóa -->
+                    <a href="#confirmLock" class="btn btn-sm btn-outline-danger" title="Khóa tài khoản">
+                      <i class="fas fa-lock"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Trần Thị B</td>
+                  <td>thib@example.com</td>
+                  <td>0912345678</td>
+                  <td>5</td>
+                  <td><span class="badge badge-danger">Bị khóa</span></td>
+                  <td>
+                    <!-- Nút xem chi tiết -->
+                    <a href="#viewCustomer" class="btn btn-sm btn-outline-info me-1" title="Xem chi tiết">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                    <!-- (MỚI) Nút Reset Mật khẩu -->
+                    <a href="#confirmResetPass" class="btn btn-sm btn-outline-warning me-1" title="Reset mật khẩu">
+                      <i class="fas fa-key"></i>
+                    </a>
+                    <!-- (MỚI) Nút Mở Khóa -->
+                    <a href="#confirmUnlock" class="btn btn-sm btn-outline-success" title="Mở khóa tài khoản">
+                      <i class="fas fa-unlock"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Phạm Tấn Khánh</td>
+                  <td>khanhphamabc@gmail.com</td>
+                  <td>0977330625</td>
+                  <td>7</td>
+                  <td><span class="badge badge-success">Hoạt động</span></td>
+                  <td>
+                    <!-- (MỚI) Cập nhật các nút -->
+                    <a href="#viewCustomer" class="btn btn-sm btn-outline-info me-1" title="Xem chi tiết">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="#confirmResetPass" class="btn btn-sm btn-outline-warning me-1" title="Reset mật khẩu">
+                      <i class="fas fa-key"></i>
+                    </a>
+                    <a href="#confirmLock" class="btn btn-sm btn-outline-danger" title="Khóa tài khoản">
+                      <i class="fas fa-lock"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nguyễn Thị Kim Chi</td>
+                  <td>nguyenthikimchi@gmail.com</td>
+                  <td>0912345678</td>
+                  <td>5</td>
+                  <td><span class="badge badge-success">Hoạt động</span></td>
+                  <td>
+                    <!-- (MỚI) Cập nhật các nút -->
+                    <a href="#viewCustomer" class="btn btn-sm btn-outline-info me-1" title="Xem chi tiết">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="#confirmResetPass" class="btn btn-sm btn-outline-warning me-1" title="Reset mật khẩu">
+                      <i class="fas fa-key"></i>
+                    </a>
+                    <a href="#confirmLock" class="btn btn-sm btn-outline-danger" title="Khóa tài khoản">
+                      <i class="fas fa-lock"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -712,8 +737,8 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
             <option>Bị khóa</option>
           </select>
           <div class="popup-actions">
-            <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-secondary">Hủy</a>
-            <a href="http://127.0.0.1:5500/admin/user.html?#updateSuccess" class="btn btn-primary">Xác nhận</a>
+            <a href="#" class="btn btn-secondary">Hủy</a>
+            <a href="#updateSuccess" class="btn btn-primary">Xác nhận</a>
           </div>
         </form>
       </div>
@@ -725,7 +750,7 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
       <div class="popup-content success popup-center-text">
         ✅ Cập nhật thông tin thành công!
         <div class="popup-actions">
-          <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-primary">Đóng</a>
+          <a href="#" class="btn btn-primary">Đóng</a>
         </div>
       </div>
     </div>
@@ -736,8 +761,8 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
       <div class="popup-content popup-center-text">
         <h5>Bạn có chắc muốn xóa khách hàng này không?</h5>
         <div class="popup-actions">
-          <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-secondary">Hủy</a>
-          <a href="http://127.0.0.1:5500/admin/user.html?#deleteSuccess" class="btn btn-danger">Xóa</a>
+          <a href="#" class="btn btn-secondary">Hủy</a>
+          <a href="#deleteSuccess" class="btn btn-danger">Xóa</a>
         </div>
       </div>
     </div>
@@ -748,7 +773,7 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
       <div class="popup-content success popup-center-text">
         ✅ Xóa khách hàng thành công!
         <div class="popup-actions">
-          <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-primary">Đóng</a>
+          <a href="#" class="btn btn-primary">Đóng</a>
         </div>
       </div>
     </div>
@@ -757,8 +782,8 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
     <div id="viewCustomer" class="popup">
       <div class="popup-content">
         <h5>Thông tin khách hàng</h5>
-        <p><strong>Tên:</strong> Trần B</p>
-        <p><strong>Email:</strong> Btran@ex.com</p>
+        <p><strong>Tên:</strong> Nguyễn Văn A</p>
+        <p><strong>Email:</strong> vana@example.com</p>
         <p><strong>Số điện thoại:</strong> 0901234567</p>
         <p><strong>Trạng thái:</strong> <span class="badge badge-success">Hoạt động</span></p>
 
@@ -812,7 +837,7 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
         <!-- Kết thúc bảng -->
         
         <div class="popup-actions">
-          <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-primary">Đóng</a>
+          <a href="#" class="btn btn-primary">Đóng</a>
         </div>
       </div>
     </div>
@@ -827,9 +852,9 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
         <h5>Xác nhận Reset Mật khẩu?</h5>
         <p>Một email hướng dẫn sẽ được gửi cho khách hàng này.</p>
         <div class="popup-actions">
-          <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-secondary">Hủy</a>
+          <a href="#" class="btn btn-secondary">Hủy</a>
           <!-- (MỚI) Thêm class 'text-dark' cho dễ đọc -->
-          <a href="http://127.0.0.1:5500/admin/user.html?#resetSuccess" class="btn btn-warning text-dark">Gửi</a>
+          <a href="#resetSuccess" class="btn btn-warning text-dark">Gửi</a>
         </div>
       </div>
     </div>
@@ -839,7 +864,7 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
       <div class="popup-content popup-center-text success">
         ✅ Đã gửi email reset mật khẩu!
         <div class="popup-actions">
-          <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-primary">Đóng</a>
+          <a href="#" class="btn btn-primary">Đóng</a>
         </div>
       </div>
     </div>
@@ -850,8 +875,8 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
         <h5>Bạn có chắc muốn KHÓA tài khoản này?</h5>
         <p>Khách hàng sẽ không thể đăng nhập.</p>
         <div class="popup-actions">
-          <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-secondary">Hủy</a>
-          <a href="http://127.0.0.1:5500/admin/user.html?#updateSuccess" class="btn btn-danger">Xác nhận Khóa</a>
+          <a href="#" class="btn btn-secondary">Hủy</a>
+          <a href="#updateSuccess" class="btn btn-danger">Xác nhận Khóa</a>
         </div>
       </div>
     </div>
@@ -862,53 +887,14 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
         <h5>Bạn có chắc muốn MỞ KHÓA tài khoản này?</h5>
         <p>Khách hàng sẽ có thể đăng nhập trở lại.</p>
         <div class="popup-actions">
-          <a href="http://127.0.0.1:5500/admin/user.html?#" class="btn btn-secondary">Hủy</a>
-          <a href="http://127.0.0.1:5500/admin/user.html?#updateSuccess" class="btn btn-success">Xác nhận Mở</a>
+          <a href="#" class="btn btn-secondary">Hủy</a>
+          <a href="#updateSuccess" class="btn btn-success">Xác nhận Mở</a>
         </div>
       </div>
     </div>
 
   
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-
-  </body><!-- Code injected--><en2vi-host class="corom-element" version="3" style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"><template shadowrootmode="open"><style>@import "chrome-extension://gfgbmghkdjckppeomloefmbphdfmokgd/css/common.css";
-@import "chrome-extension://gfgbmghkdjckppeomloefmbphdfmokgd/css/style.css";</style><style id="svelte-1f4zgot">.toast-container.svelte-1f4zgot{position:fixed;pointer-events:none;width:0;height:0;display:flex;flex-direction:column-reverse;align-items:center;z-index:1000;bottom:0;padding:16px;gap:8px}.show.svelte-1f4zgot{width:100%;height:100%}</style>   <div class="toast-container svelte-1f4zgot"></div></template></en2vi-host><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"><template shadowrootmode="open"><style>@import "chrome-extension://jdfkmiabjpfjacifcmihfdjhpnjpiick/css/content-script.css";
-</style><div class="body"><div class="turn-lights-overlay"></div><toasts id="toasts-container"></toasts></div></template></savior-host></html>
+</body>
+  </body>
+</html>

@@ -28,7 +28,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   const query = input.value.trim();
   if (query !== "") {
-    window.location.href = "./menu-signin.html";
+    window.location.href = "menu-signin.html";
   }
 });
 

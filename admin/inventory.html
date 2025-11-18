@@ -1,105 +1,269 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Quản lý kho | Admin Bán Lẩu</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body { background-color: rgb(139, 133, 133); }
-    .sidebar { background-color: #212529; }
-    .nav-link.active {
-      background-color: #f8b400;
-      color: #212529 !important;
-      font-weight: bold;
-      border-radius: 6px;
+  <!DOCTYPE html>
+  <html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <title>Quản lý kho | Admin Bán Lẩu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="inventory.css" rel="stylesheet" />
+    <style>
+      body { background-color: rgb(139, 133, 133); }
+      .sidebar { background-color: #212529; }
+      .nav-link.active {
+        background-color: #f8b400;
+        color: #212529 !important;
+        font-weight: bold;
+        border-radius: 6px;
+      }
+      .nav-link:hover {
+        background-color: #ffc107;
+        color: #212529 !important;
+      }
+      form {
+        background-color: #ffc107;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      }
+      /* Lớp phủ mờ toàn màn hình */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* đảm bảo hiện trên sidebar */
+  }
+
+
+  .popup-overlay {
+      display: none; /* ẩn mặc định */
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
     }
-    .nav-link:hover {
-      background-color: #ffc107;
-      color: #212529 !important;
-    }
-    form {
-      background-color: #ffc107;
+
+    
+    .popup-content {
+      background: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      max-height: 80%;
+      overflow-y: auto;
+      width: 80%;
+      box-shadow: 0 0 10px #000;
+      position: relative;
     }
-  </style>
-</head>
-<body>
-  <div class="d-flex">
-    <!-- Sidebar -->
-    <nav class="sidebar text-white p-3 vh-100">
-      <h4 class="text-center mb-4">🍲 Lẩu Ngon Admin</h4>
-      <ul class="nav flex-column">
-        <li class="nav-item"><a href="user/index - signin.html" class="nav-link text-white"><i class="fa fa-home me-2"></i> Trang chủ</a></li>
-        <li class="nav-item"><a href="admin-dashborad.html" class="nav-link text-white"><i class="fa fa-chart-line me-2"></i> Tổng quan</a></li>
-        <li class="nav-item"><a href="food.html" class="nav-link text-white"><i class="fa fa-bowl-food me-2"></i> Món ăn</a></li>
-        <li class="nav-item"><a href="order.html" class="nav-link text-white"><i class="fa fa-box me-2"></i> Đơn hàng</a></li>
-        <li class="nav-item"><a href="user.html" class="nav-link text-white"><i class="fa fa-users me-2"></i> Khách hàng</a></li>
-        <li class="nav-item"><a href="charst.html" class="nav-link text-white"><i class="fa fa-chart-pie me-2"></i> Thống kê</a></li>
-        <li class="nav-item"><a href="inventory.html" class="nav-link active text-white"><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a></li>
-      </ul>
-    </nav>
 
-    <!-- Main content -->
-    <main class="flex-grow-1 p-4">
-      <h2 class="text-center fw-bold mb-4">Quản lý kho hàng</h2>
+    .popup-content .close-btn {
+      align-items: right;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+    }
 
-      <!-- Bảng dữ liệu -->
-      <table class="table table-bordered text-center align-middle">
-        <thead class="table-dark">
-          <tr>
-            <th>ID</th>
-            <th>Tên nguyên liệu</th>
-            <th>Số lượng</th>
-            <th>Đơn vị</th>
-            <th>Ngày nhập</th>
-          </tr>
-        </thead>
-        <tbody id="inventoryTable">
-          <!-- Dữ liệu hiển thị từ JS -->
-        </tbody>
-      </table>
+  /* Animation */
+  @keyframes fadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
 
-      <!-- Form thêm/sửa/xóa -->
-      <div class="container mt-4">
-        <form id="inventoryForm">
-          <h4 class="mb-3"><i class="fa fa-box me-2"></i>Thêm / Sửa / Xóa nguyên liệu</h4>
+  /* Nút đóng */
+  .close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 26px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+    #popup-notice{
+      display: none; /* ẩn mặc định */
+    }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex">
+      <!-- Sidebar -->
+      <nav class="sidebar text-white p-3 vh-100">
+        <h4 class="text-center mb-4">🍲 Lẩu Ngon Admin</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a href="user/index - signin.html" class="nav-link text-white"><i class="fa fa-home me-2"></i> Trang chủ</a></li>
+          <li class="nav-item"><a href="admin-dashborad.html" class="nav-link text-white"><i class="fa fa-chart-line me-2"></i> Tổng quan</a></li>
+          <li class="nav-item"><a href="food.html" class="nav-link text-white"><i class="fa fa-bowl-food me-2"></i> Món ăn</a></li>
+          <li class="nav-item"><a href="order.html" class="nav-link text-white"><i class="fa fa-box me-2"></i> Đơn hàng</a></li>
+          <li class="nav-item"><a href="user.html" class="nav-link text-white"><i class="fa fa-users me-2"></i> Khách hàng</a></li>
+          <li class="nav-item"><a href="charst.html" class="nav-link text-white"><i class="fa fa-chart-pie me-2"></i> Thống kê</a></li>
+          <li class="nav-item"><a href="inventory.html" class="nav-link active text-white"><i class="fa fa-boxes-stacked me-2"></i> Quản lý kho</a></li>
+        </ul>
+      </nav>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fa fa-id-card me-2"></i> ID nguyên liệu</label>
-            <input type="text" id="id" class="form-control" placeholder="Nhập ID nguyên liệu">
-          </div>
+      <!-- Main content -->
+      <main class="flex-grow-1 p-4">
+        <h2 class="text-center fw-bold mb-4">Quản lý kho hàng</h2>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fa fa-apple-whole me-2"></i> Tên nguyên liệu</label>
-            <input type="text" id="name" class="form-control" placeholder="Nhập tên nguyên liệu">
-          </div>
+        <!-- Bảng dữ liệu -->
+        <table class="table table-bordered text-center align-middle" id="inventory">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Tên món ăn</th>
+              <th>Số lượng</th>
+              <th>Đơn vị</th>
+              <th>Ngày nhập</th>
+              <th>Chỉnh sửa</th>
+            </tr>
+          </thead>
+          <tbody id="inventoryTable">
+            <!-- Dữ liệu hiển thị từ JS -->
+          </tbody>
+        </table>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fa fa-scale-balanced me-2"></i> Số lượng</label>
-            <input type="number" id="quantity" class="form-control" placeholder="Nhập số lượng">
-          </div>
+        <!-- Form thêm/sửa/xóa -->
+        <div class="container mt-4">
+          <form id="inventoryForm">
+            <h4 class="mb-3"><i class="fa fa-box me-2"></i>Nhập kho</h4>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fa fa-weight-scale me-2"></i> Đơn vị</label>
-            <input type="text" id="unit" class="form-control" placeholder="VD: kg, gói, chai,...">
-          </div>
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-id-card me-2"></i> ID đơn hàng</label>
+              <input type="text" id="id" class="form-control" placeholder="Nhập ID đơn hàng">
+            </div>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fa fa-calendar me-2"></i> Ngày nhập</label>
-            <input type="date" id="date" class="form-control">
-          </div>
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-apple-whole me-2"></i> Tên món ăn</label>
+              <select class="form-select">
+                  <option>Chọn sản phẩm</option>
+                  <option value="P01">Lẩu bò</option>
+                  <option value="B02">Lẩu hải sản</option>
+                  <option value="PA04">Lẩu cua đồng</option>
+                  <option value="PA04">Khác</option>
+                </select>
+            </div>
 
-          <button type="button" class="btn btn-success" onclick="addItem()"><i class="fa fa-plus me-1"></i> Thêm</button>
-          <button type="button" class="btn btn-secondary" onclick="editItem()"><i class="fa fa-pen me-1"></i> Sửa</button>
-          <button type="button" class="btn btn-danger" onclick="deleteItem()"><i class="fa fa-trash me-1"></i> Xóa</button>
-        </form>
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-scale-balanced me-2"></i> Số lượng</label>
+              <input type="number" id="quantity" class="form-control" placeholder="Nhập số lượng">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-weight-scale me-2"></i> Đơn vị</label>
+              <select class="form-select">
+                  <option>Chọn đơn vị nhập</option>
+                  <option value="P01">Phần</option>
+                  <option value="B02">Thùng</option>
+                  <option value="PA04">kg</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label"><i class="fa fa-calendar me-2"></i> Ngày nhập</label>
+              <input type="date" id="date" class="form-control">
+            </div>
+            <button type="button" class="btn btn-success" onclick="openPopup('inventoryadd')"><i class="fa fa-plus me-1"></i> Thêm</button>
+            <button type="button" class="btn btn-danger" onclick="clearForm()"><i class="fa fa-trash me-1"></i> Hủy nhập</button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup('popup')">&times;</span>
+        <div>
+          <h1 style="text-align: center;">Chi tiết phiếu NL001</h1>
+          <p><strong>Trạng Thái:</strong>
+          <span class="badge bg-success">Hoàn thành</span></p>
+        </div>
+        <table class="table table-bordered text-center align-middle" id="inventory2">
+          <thead class="table-dark">
+            
+            <tr>
+              <th>ID</th>
+              <th>Tên nguyên liệu</th>
+              <th>Số lượng</th>
+              <th>Đơn vị</th>
+              <th>Tổng</th>
+              <th>Đơn giá</th>
+            </tr>
+          </thead>
+          <tbody id="inventoryTable2">
+            <!-- Dữ liệu hiển thị từ JS -->
+          </tbody>
+        </table>
       </div>
-    </main>
-  </div>
+    </div>
+    <div id="inventoryadd" class="popup">
+      <div class="popup-content">
+        <h1 style="text-align: center;">Chi tiết nhập phiếu</h1>
+        <span class="close" onclick="closePopup('inventoryadd')">&times;</span>
+        <div>
+          <table class="table table-bordered text-center align-middle" id="inventoryadd">
+            <thead class="table-dark">
+              <tr>
+                <th>ID</th>
+                <th>Tên nguyên liệu</th>
+                <th>Số lượng</th>
+                <th>Đơn vị</th>
+                <th>Tổng</th>
+                <th>Đơn giá</th>
+              </tr>
+            </thead>
+            <tbody id="addDon">
+              <tr>
+                <td><input type="text" class="form-control" placeholder="Nhập ID"></td>
+                <td><input type="text" class="form-control" placeholder="Nhập nguyên liệu"></td>
+                <td class="quantity"><input type="number" class="form-control" placeholder="Nhập số lượng"></td>
+                <td><input type="text" class="form-control" placeholder="Nhập đơn vị"></td>
+                <td class="total"><input type="text" class="form-control" placeholder="Nhập tổng bill"></td>
+                <td class="unit-price"></td>
+            </tbody>
+          </table>
+        </div>
+        <div class="button-row">
+          <button class="btn-primary btn"><i class="fa-solid fa-plus"></i>Thêm</button>
+          <button class="btn-warning btn" onclick="closePopup('inventoryadd')">Hủy</button>
+        </div>
+      </div>
+    </div>
+    <div id="add" class="popup">
+      <div class="popup-content">
 
-  <script src="inventory.js"></script>
-</body>
-</html>
+      </div>
+    </div>
+    <script src="inventory.js"></script>
+    <!-- <script>
+  function openPopup() {
+    
+    const tableData = tableId === "inventoryTable" ? inventory : inventory2;
+    const item = tableData[index];
+    
+    document.getElementById("id").value = item.id;
+    document.getElementById("name").value = item.name;
+    document.getElementById("quantity").value = item.quantity;
+    document.getElementById("unit").value = item.unit;
+    document.getElementById("date").value = item.date;
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  // Click ra ngoài để tắt popup
+  window.onclick = function(e) {
+    const popup = document.getElementById("popup");
+    if (e.target === popup) {
+      closePopup();
+    }
+  };
+  </script> -->
+
+  </body>
+  </html>
