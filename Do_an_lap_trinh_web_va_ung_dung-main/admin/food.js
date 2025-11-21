@@ -55,14 +55,3 @@ function xacNhan() {
 function huy() {
   alert("Đã hủy thao tác")
 }
-//xóa món ăn
-document.querySelectorAll(".btn-danger").forEach((btn) => {
-    btn.addEventListener("click", function () {
-      const row = this.closest("tr");
-      const tenmon = row.children[2].innerText;
-
-      if (confirm(`🗑 Bạn muốn xóa món ${tenmon}?`)) {
-        alert(`✔ Đã xóa món ${tenmon} `);
-      }
-    });
-  });

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-t" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+
+  <title>Lẩu ngon</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+    integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+    crossorigin="anonymous" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index - signin.html">
+            <span>Lẩu ngon</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  mx-auto ">
+              <li class="nav-item">
+                <a class="nav-link" href="index - signin.html">Trang chủ <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="menu-signin.html">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="giohang .html">Giỏ hàng</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html">Đăng xuất</a></li>
+            </ul>
+
+            <div class="user_option">
+              <a href="giaodiennguoidung.html" class="user_link"><i class="fa fa-user" aria-hidden="true"></i></a>
+
+              
+
+              <a href="menu-signin.html" class="btn my-2 my-sm-0 nav_search-btn">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </a>
+
+              <a id="loginButton" href="index.html" class="order_online">Anh Tèo</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    
+    </div>
+
+  <section class="product_detail_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img_container">
+            <div class="main_img mb-3">
+              <img id="mainImage" src="images/f1.png" alt="Đang tải..." class="img-fluid rounded shadow">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h2 class="product_name">Lẩu cua đồng</h2>
+            <div class="rating mb-2">
+              ⭐⭐⭐⭐⭐ <span class="text-muted">(201 đánh giá)</span>
+            </div>
+            <h3 class="product_price text-danger mb-3">
+              200.000₫
+            </h3>
+            <p class="product_desc">
+              Hương vị dân dã, nước dùng thanh ngọt từ cua đồng tươi, hòa quyện cùng rau xanh và đậu phụ, mang đậm hồn quê Việt.
+            </p>
+            
+            <div class="mb-3">
+              <label for="quantity" class="font-weight-bold">Số lượng:</label>
+              <div class="input-group" style="width: 120px;">
+                <button class="btn btn-outline-secondary" type="button" onclick="decrease()">-</button>
+                <input id="quantity" type="text" class="form-control text-center" value="1">
+                <button class="btn btn-outline-secondary" type="button" onclick="increase()">+</button>
+              </div>
+            </div>
+
+            <div class="btn-box mt-3">
+              <button class="btn btn-primary btn-lg mr-2 add-to-cart-btn" data-id="" id="btnAddToCartDetail"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ</button>
+              <button class="btn btn-danger btn-lg" onclick="orderNow()"><i class="fa fa-bolt"></i> Mua ngay</button>
+            </div>
+
+            <div class="mt-4 p-3 bg-light rounded">
+              <h5 class="mb-2">🎁 Ưu đãi đặc biệt</h5>
+              <ul class="list-unstyled ml-3">
+                <li>✔ Tặng kèm nước ngọt khi mua combo 2 phần</li>
+                <li>✔ Giảm 10% cho đơn hàng đầu tiên</li>
+                <li>✔ Giao hàng miễn phí trong bán kính 5km</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="detail-info bg-white p-4 rounded shadow-sm">
+            <h4>Mô tả chi tiết sản phẩm</h4>
+            <p>Hương vị dân dã, nước dùng thanh ngọt từ cua đồng tươi, hòa quyện cùng rau xanh và đậu phụ, mang đậm hồn quê Việt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/product.js"></script> 
+  <script src="js/product-data.js"></script>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  
+    <script>
+      // --- CÁC HÀM GIỎ HÀNG (GIỮ NGUYÊN TỪ FILE CŨ) ---
+        function getCart() {
+            const cart = localStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+    
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+      // Hàm updateCartCount() đã được định nghĩa ở header
+  
+        // --- HÀM XỬ LÝ KHI NHẤN NÚT THÊM VÀO GIỎ HÀNG (TRANG CHI TIẾT) ---
+      // (Hàm này giữ nguyên, nó tự động đọc từ các-element đã được điền)
+        function addToCartDetail(event) {
+            event.preventDefault(); 
+  
+            const button = event.currentTarget;
+            const id = button.getAttribute('data-id');
+            const name = document.querySelector('.product_name').textContent.trim();
+            
+            const priceElement = document.querySelector('.product_price');
+            const fullPriceText = priceElement.textContent.trim(); 
+            const priceCleaned = fullPriceText.split(' ')[0].replace(/[^0-9]/g, '');
+            const price = parseInt(priceCleaned);
+            
+            const image = document.getElementById('mainImage').getAttribute('src');
+            const quantityInput = document.getElementById('quantity');
+            const quantity = parseInt(quantityInput.value);
+  
+            // Kiểm tra tính hợp lệ
+  //           if (!id || isNaN(price) || isNaN(quantity) || quantity < 1 || price === 0) {
+  //               Swal.fire({
+  //                   icon: 'error',
+  //                   title: 'Lỗi',
+  //                   text: 'Không thể trích xuất thông tin sản phẩm. Vui lòng kiểm tra lại.',
+  //               });
+  //               return;
+  //         }
+  
+  //         let cart = getCart();
+  //         const existingItem = cart.find(item => item.id === id);
+  
+  //         if (existingItem) {
+  //             existingItem.quantity += quantity; 
+  //         } else {
+  //             const item = {
+  //                 id: id,
+  //                 name: name,
+  //                 price: price,
+  //                 quantity: quantity,
+  //                 image: image 
+  //             };
+  //             cart.push(item);
+  //         }
+  
+  //         saveCart(cart);
+          
+          if (typeof updateCartCount === 'function') {
+              updateCartCount();
+          }
+          
+          Swal.fire({
+              icon: 'success',
+              title: 'Đã thêm vào giỏ hàng!',
+              text: `${quantity} x ${name} đã được thêm vào giỏ.`,
+              showConfirmButton: false,
+              timer: 1800,
+              toast: true,
+              position: 'top-end'
+          });
+      }
+  
+      // --- HÀM TĂNG GIẢM SỐ LƯỢNG (Giữ nguyên) ---
+      function increase() {
+          let quantityInput = document.getElementById('quantity');
+          let currentVal = parseInt(quantityInput.value);
+          quantityInput.value = currentVal + 1;
+      }
+  
+      function decrease() {
+          let quantityInput = document.getElementById('quantity');
+          let currentVal = parseInt(quantityInput.value);
+          if (currentVal > 1) {
+              quantityInput.value = currentVal - 1;
+          }
+      }
+      
+      // *** HÀM MỚI: TẢI DỮ LIỆU SẢN PHẨM ***
+      function loadProductDetails() {
+          // 1. Lấy ID sản phẩm từ URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const productId = urlParams.get('id');
+
+          // 2. Tìm sản phẩm trong CSDL (biến allProducts từ file product-data.js)
+          const product = allProducts[productId];
+
+          // 3. Nếu tìm thấy sản phẩm -> Đổ dữ liệu vào HTML
+          if (product) {
+              // Cập nhật tiêu đề trang
+              document.title = product.name + " - Lẩu ngon";
+
+              // Cập nhật thông tin chính
+              document.querySelector('.product_name').textContent = product.name;
+              // Format giá tiền (ví dụ: 129000 -> 129.000₫)
+              document.querySelector('.product_price').innerHTML = `${product.price.toLocaleString('vi-VN')}₫`;
+              document.querySelector('.product_desc').textContent = product.shortDesc;
+              document.querySelector('.rating .text-muted').textContent = `(${product.ratingCount} đánh giá)`;
+
+              // Cập nhật hình ảnh
+              document.getElementById('mainImage').src = product.image;
+              document.getElementById('mainImage').alt = product.name;
+
+              // Cập nhật data-id cho nút "Thêm vào giỏ"
+              document.getElementById('btnAddToCartDetail').setAttribute('data-id', product.id);
+
+              // Cập nhật mô tả chi tiết (xóa mô tả cũ, thêm mô tả mới)
+              const detailInfo = document.querySelector('.detail-info');
+              detailInfo.innerHTML = '<h4>Mô tả chi tiết sản phẩm</h4>'; // Xóa nội dung "Đang tải..."
+              
+              product.longDesc.forEach(paraText => {
+                  const p = document.createElement('p');
+                  p.textContent = paraText;
+                  detailInfo.appendChild(p);
+              });
+
+          } else {
+              // 4. Nếu không tìm thấy (sai ID hoặc vào trực tiếp)
+              document.querySelector('.product_detail_section .container').innerHTML = 
+                  `<div class="text-center" style="padding: 50px 0;">
+                      <h2>Oops! Không tìm thấy sản phẩm</h2>
+                      <p>Sản phẩm bạn đang tìm không tồn tại. Vui lòng quay lại trang menu.</p>
+                      <a href="menu.html" class="btn btn-primary">Về trang Menu</a>
+                  </div>`;
+          }
+      }
+  
+        // --- KHỞI TẠO ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gắn sự kiện cho nút Thêm vào giỏ hàng
+            const detailButton = document.getElementById('btnAddToCartDetail');
+            if (detailButton) {
+                detailButton.addEventListener('click', addToCartDetail);
+            }
+
+          // Hàm loadProductDetails() đã được gọi trong script ở header
+        });
+    </script>
+  <script>function orderNow() {
+  Swal.fire({
+    title: "🎉 Đặt hàng thành công!",
+    html: `
+      <img src="images/f1.png" alt="Pizza" style="width:100px; margin-bottom:10px; border-radius:50%;">
+      <p style="font-size:17px;">Cảm ơn bạn đã tin tưởng <b>Lẩu ngon</b> 🍕<br>
+      Đơn hàng của bạn đang được xử lý.</p>
+    `,
+    background: 'linear-gradient(135deg, #fff8e1, #ffe0b2)',
+    color: '#333',
+    showCancelButton: true,
+    confirmButtonColor: '#ff6f00',
+    cancelButtonColor: '#757575',
+    confirmButtonText: 'Xem đơn hàng',
+    cancelButtonText: 'Đóng',
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = "giohang .html"; // chuyển tới trang đơn hàng
+    }
+  });
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+/* Ẩn ô tìm kiếm mặc định */
+.search-box {
+  position: relative;
+  display: inline-block;
+}
+
+#searchInput {
+  padding: 8px 35px 8px 12px; /* chừa khoảng bên phải cho icon */
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s;
+  width: 200px;
+}
+
+#searchInput:focus {
+  border-color: #ff4b2b;
+}
+
+#searchBtn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+}
+
+#searchBtn:hover {
+  color: #ff4b2b;
+}
+
+
+/* Khi form có class "show", hiện ô tìm kiếm ra */
+#formSearch.show #searchInput {
+  display: inline-block;
+}
