@@ -1,0 +1,36 @@
+/* #btnA, #btnC {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    #btnB {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    } */
+    .button-row {
+    display: flex;
+    justify-content: space-between; /* A bên trái, B bên phải, C giữa nếu muốn */
+    margin-top: 15px;
+    }
+    .button-row button {
+    min-width: 80px;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      color: white;
+    }
+
+    .btn-primary { background: #07ff5a; }
+    .btn-warning { background: #f0ad4e; }
+    .btn-danger  { background: #dc3545; }

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Feane - Giỏ Hàng</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="./css/giohang.css" rel="stylesheet" />
+
+    <style>
+      body {
+        background-image: url("images/hero-bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        color: #fff;
+      }
+
+      .navbar {
+        justify-content: center;
+      }
+      .navbar-nav {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+      .navbar .nav-link {
+        font-weight: 600;
+        font-size: 18px;
+        color: #ffffff !important;
+        transition: 0.3s;
+      }
+      .navbar .nav-link:hover {
+        color: #ffbe33 !important;
+        text-shadow: 0 0 6px rgba(255, 190, 51, 0.6);
+      }
+      .navbar-nav .nav-item.active .nav-link {
+        color: #ffbe33 !important;
+      }
+
+      .cart-page {
+        padding: 40px 0;
+      }
+      .cart-container {
+        background-color: rgba(228, 193, 142, 0.9);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: auto;
+      }
+      .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .cart-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #e6e9ee;
+        padding: 12px;
+        border-radius: 8px;
+        background-color: #fbfdff;
+        gap: 16px;
+      }
+      .cart-info {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .cart-info img {
+        width: 80px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+      .qty-controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto;
+      }
+      .btn-qty {
+        background-color: #223b23;
+        color: white;
+        border: none;
+        width: 28px;
+        height: 28px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .btn-qty:hover {
+        background-color: #2e8b3b;
+      }
+      .qty {
+        min-width: 24px;
+        text-align: center;
+        font-weight: bold;
+        color: black;
+      }
+      .cart-summary {
+        border-top: 1px dashed #ddd;
+        padding-top: 12px;
+        text-align: right;
+        font-weight: bold;
+      }
+      .checkout-btn {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .checkout-btn:hover {
+        background-color: #2e8b3b;
+      }
+    </style>
+  </head>
+  <body class="sub_page">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Lẩu Ngon</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="index - signin.html">Trang Chủ</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu-signin.html">Menu</a></li>
+            <li class="nav-item active">
+              <a class="nav-link" href="giohang .html">Giỏ Hàng</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Đăng Xuất</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CART CONTENT -->
+    <section class="cart-page layout_padding">
+      <div class="container">
+        <div class="cart-container">
+          <div class="cart-header">
+            <h3>Giỏ Hàng Của Bạn</h3>
+            <button id="clearBtn" class="btn btn-outline-danger">
+              Xóa tất cả
+            </button>
+          </div>
+
+          <div id="cartList" class="cart-list"></div>
+
+          <div class="cart-summary">
+            <p>Tạm tính: <span id="subtotal">0 ₫</span></p>
+            <p>Phí vận chuyển: <span id="shipping">0 ₫</span></p>
+            <p style="font-size: 18px">
+              Tổng cộng: <span id="total">0 ₫</span>
+            </p>
+            <button id="checkoutBtn" class="checkout-btn mt-2">Mua hàng</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="modalChiTietDH" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content text-dark">
+          <div class="modal-header">
+            <h5 class="modal-title">Chi Tiết Đơn Hàng</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              <strong>Họ tên:</strong>
+              <input
+                type="text"
+                class="form-control"
+                id="inputTen"
+                value="Người mua"
+              />
+            </p>
+            <p>
+              <strong>SDT:</strong>
+              <input
+                type="text"
+                class="form-control"
+                id="inputSDT"
+                value="0123456789"
+              />
+            </p>
+            <p>
+              <strong>Địa chỉ:</strong>
+              <input
+                type="text"
+                class="form-control"
+                id="inputDiaChi"
+                value="123 Đường ABC"
+              />
+            </p>
+            <p>
+              <strong>Ghi chú:</strong>
+              <input
+                type="text"
+                class="form-control"
+                id="inputGhiChu"
+                value="Không có"
+              />
+            </p>
+            <p><strong>Đơn hàng:</strong></p>
+            <ul id="listDonHang"></ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" id="btnConfirmDH">
+              Xác nhận
+            </button>
+            <button type="button" class="btn btn-warning" id="btnEditDH">
+              Sửa
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Hủy
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+      const STORAGE_KEY = "demo_cart_v1";
+
+      function loadCart() {
+        const data = localStorage.getItem(STORAGE_KEY);
+        return data ? JSON.parse(data) : [];
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+      }
+
+      function initDemoCart() {
+        let cart = loadCart();
+        if (cart.length === 0) {
+          cart = [
+            {
+              id: "p1",
+              title: "Lẩu Hải Sản",
+              price: 259000,
+              qty: 1,
+              image: "images/f2.png",
+            },
+            {
+              id: "p2",
+              title: "Lẩu Bò",
+              price: 289000,
+              qty: 2,
+              image: "images/f3.png",
+            },
+            {
+              id: "p3",
+              title: "Lẩu Cua Đồng",
+              price: 239000,
+              qty: 1,
+              image: "images/f1.png",
+            },
+          ];
+          saveCart(cart);
+        }
+      }
+
+      const cartListEl = document.getElementById("cartList");
+      const subtotalEl = document.getElementById("subtotal");
+      const shippingEl = document.getElementById("shipping");
+      const totalEl = document.getElementById("total");
+      const clearBtn = document.getElementById("clearBtn");
+      const checkoutBtn = document.getElementById("checkoutBtn");
+
+      function formatVND(num) {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " ₫";
+      }
+
+      function renderCart() {
+        const cart = loadCart();
+        cartListEl.innerHTML = "";
+        if (cart.length === 0) {
+          cartListEl.innerHTML =
+            '<p class="text-muted text-center">Giỏ hàng trống.</p>';
+        } else {
+          cart.forEach((item) => {
+            const div = document.createElement("div");
+            div.className = "cart-item";
+            div.innerHTML = `
+            <div class="cart-info">
+              <img src="${item.image}" alt="${item.title}">
+              <div>
+                <h6>${item.title}</h6>
+                <small>${formatVND(item.price)}</small>
+              </div>
+            </div>
+            <div class="qty-controls">
+              <button class="btn-qty" data-id="${
+                item.id
+              }" data-action="decrease">-</button>
+              <span class="qty">${item.qty}</span>
+              <button class="btn-qty" data-id="${
+                item.id
+              }" data-action="increase">+</button>
+            </div>
+            <strong>${item.qty === 0 ? "000.000 ₫" : formatVND(item.qty * item.price)}</strong>
+          `;
+            cartListEl.appendChild(div);
+          });
+        }
+
+        let subtotal = cart.reduce(
+          (sum, item) => sum + item.qty * item.price,
+          0
+        );
+        let shipping = subtotal >= 500000 ? 0 : subtotal > 0 ? 30000 : 0;
+        subtotalEl.textContent = formatVND(subtotal);
+        shippingEl.textContent = formatVND(shipping);
+        totalEl.textContent = formatVND(subtotal + shipping);
+      }
+
+      clearBtn.onclick = () => {
+        if (confirm("Bạn có muốn làm trống giỏ hàng không?")) {
+          alert("Đã xóa toàn bộ giỏ hàng !")
+          saveCart(cart);
+          renderCart();
+        }
+      };
+
+      // Khi bấm nút tăng giảm
+cartListEl.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-qty")) {
+    const id = e.target.dataset.id;
+    const action = e.target.dataset.action;
+    let cart = loadCart();
+    const item = cart.find((p) => p.id === id);
+    if (!item) return;
+
+    if (action === "increase") {
+      item.qty++; // tăng số lượng
+    } else if (action === "decrease") {
+      if (item.qty > 0) {
+        item.qty--; // giảm số lượng bình thường
+        if (item.qty === 0) {
+          alert(`Đã xóa ${item.title} khỏi giỏ hàng`);
+        }
+      }
+    }
+
+    saveCart(cart);  // cập nhật localStorage với số lượng mới
+    renderCart();    // cập nhật UI
+  }
+});
+
+
+      checkoutBtn.addEventListener("click", () => {
+        const cart = loadCart();
+        if (cart.length === 0) return alert("Giỏ hàng trống!");
+        const listEl = document.getElementById("listDonHang");
+        listEl.innerHTML = cart
+          .map(
+            (item) =>
+              `<li>${item.title} x${item.qty} - ${formatVND(
+                item.price * item.qty
+              )}</li>`
+          )
+          .join("");
+        document.getElementById("inputTen").value = "Người mua";
+        document.getElementById("inputSDT").value = "0123456789";
+        document.getElementById("inputDiaChi").value = "123 Đường ABC";
+        document.getElementById("inputGhiChu").value = "Không có";
+
+        const modalDH = new bootstrap.Modal(
+          document.getElementById("modalChiTietDH")
+        );
+        modalDH.show();
+
+        document.getElementById("btnConfirmDH").onclick = () => {
+          alert("✔ Đơn hàng đã được xác nhận!");
+        };
+        document.getElementById("btnEditDH").onclick = () => {
+          alert("✔ Đã sửa thành công");
+        };
+      });
+
+      initDemoCart();
+      renderCart();
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

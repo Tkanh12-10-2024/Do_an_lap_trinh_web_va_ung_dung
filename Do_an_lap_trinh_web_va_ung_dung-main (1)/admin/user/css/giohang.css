@@ -1,0 +1,47 @@
+/* Màu mặc định cho các liên kết */
+.navbar-nav .nav-link {
+  color:black; /* Màu trắng */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.navbar {
+  background-image: url("images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.navbar2 {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Khi rê chuột vào */
+.navbar-nav .nav-link:hover {
+  color: #ff944d; /* Cam nhạt khi hover */
+}
+
+/* Trang đang hoạt động (ví dụ Giỏ Hàng) */
+.navbar-nav .nav-item.active .nav-link {
+  color: #ff8000; /* Cam đậm hơn cho trang hiện tại */
+  font-weight: 600;
+}
+
+p {
+  color:black;
+}
+h3 {
+  color:black;
+}
+h6{
+  color:black;
+}
+strong {
+  color:black;
+}
+small {
+  color:black;
+}
+
+
+
+
+
